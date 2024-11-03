@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-# pyinstaller --onefile --windowed WinStatus.py
-
 import tkinter as tk
 from tkinter import scrolledtext, Menu, messagebox
 import math
