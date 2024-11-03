@@ -72,7 +72,7 @@ def get_maximum_damage_limit():
 	maximum_damage_limit_str = maximum_damage_limit_str.strip()
 	if maximum_damage_limit_str == "":
 		return 300000
-
+		
 	try:
 		maximum_damage_limit = int(maximum_damage_limit_str, 0)
 	except Exception as e:
@@ -100,7 +100,6 @@ def get_input():
 
 # 伤害奖励转换伤害值
 def damage_value():
-
 	maximum_damage_limit = get_maximum_damage_limit()
 	if (maximum_damage_limit == -1):
 		return
@@ -114,7 +113,6 @@ def damage_value():
 
 # 伤害值转换伤害奖励
 def damage_reward():
-
 	maximum_damage_limit = get_maximum_damage_limit()
 	if (maximum_damage_limit == -1):
 		return
@@ -140,15 +138,14 @@ root.grid_columnconfigure(1, weight=1)  # 第1列会随着窗口调整大小
 root.grid_rowconfigure(0, weight=1)     # input_frame随着窗口调整大小
 root.grid_rowconfigure(1, weight=1)     # output_frame会随着窗口调整大小
 
-
 # 创建一个新的 Frame 用于输入文本框
 input_frame = tk.Frame(root)
 input_frame.grid(row=0, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
 # 配置输入框架的列和行的伸展框架的列和行的伸展
 input_frame.grid_columnconfigure(0, weight=1)  # 使输出框占满整列
 input_frame.grid_columnconfigure(1, weight=1)  # 使输出框占满整列
-input_frame.grid_rowconfigure(1, weight=1)     # 使输入框占满整行
-input_frame.grid_rowconfigure(3, weight=1)     # 使输入框占满整行
+input_frame.grid_rowconfigure(1, weight=1)     # 使input_text输入框占满整行
+input_frame.grid_rowconfigure(3, weight=1)     # 使maximum_damage_limit_text输入框占满整行
 
 # 输入标签
 input_label = tk.Label(input_frame, text="输入伤害奖励 / 伤害值")
@@ -160,7 +157,6 @@ input_text.grid(row=1, column=0, columnspan=2, padx=10, pady=0, sticky="nsew")
 # 绑定鼠标右键点击事件到上下文菜单
 input_text.bind("<Button-3>", lambda event, tw=input_text: show_context_menu(event, tw))
 
-
 # 输入标签
 maximum_damage_limit_label = tk.Label(input_frame, text="伤害上限（默认为300000）")
 maximum_damage_limit_label.grid(row=2, column=0, padx=5, pady=0, sticky="w")
@@ -171,7 +167,6 @@ maximum_damage_limit_text.grid(row=3, column=0, columnspan=2, padx=10, pady=0, s
 # 绑定鼠标右键点击事件到上下文菜单
 maximum_damage_limit_text.bind("<Button-3>", 
 	lambda event, tw=maximum_damage_limit_text: show_context_menu(event, tw))
-
 
 #按钮
 damage_value_button = tk.Button(input_frame, 
@@ -190,7 +185,6 @@ output_frame.grid(row=1, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
 output_frame.grid_columnconfigure(0, weight=1)  # 使输出框占满整列
 output_frame.grid_rowconfigure(1, weight=1)     # 使第一个输出框占满整行
 
-
 # 输出标签
 output_label2 = tk.Label(output_frame, text="输出")
 output_label2.grid(row=0, column=0, padx=5, pady=0, sticky="w")
@@ -201,7 +195,6 @@ output_text = scrolledtext.ScrolledText(output_frame,
 output_text.grid(row=1, column=0, padx=10, pady=0, sticky="nsew")
 # 绑定鼠标右键点击事件到上下文菜单
 output_text.bind("<Button-3>", lambda event, tw=output_text: show_context_menu(event, tw))
-
 
 # 创建清空按钮
 clear_button = tk.Button(root, 
