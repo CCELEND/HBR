@@ -64,7 +64,7 @@ style_id_brochure_id = {
     "1003504":"AKanzakiAgent_R3",
     "1003603":"MSatsukiDefault_R3",
     "1003604":"MSatsukiAgent_R3",
-    "1003605":"",
+    "1003605":"MSatsukiBride_R3",
 
 # 30G
     "1004103":"YShirakawaDefault_R3",
@@ -89,7 +89,7 @@ style_id_brochure_id = {
 
 # 31E
     "1006103":"IcOhshimaDefault_R3",
-    "1006104":"",
+    "1006104":"IcOhshimaBride_R3",
     "1006203":"NiOhshimaDefault_R3",
     "1006303":"MiOhshimaDefault_R3",
     "1006403":"YoOhshimaDefault_R3",
