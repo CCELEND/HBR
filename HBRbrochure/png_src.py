@@ -32,7 +32,10 @@ weapon_type_png_srcs = {
 style_png_srcs = {
     # 31A
     "1001103":"https://i0.hdslb.com/bfs/game/player/tools/fever/64e21883eac81da8f086717b518da5567dcae9e0.png@.webp",
+    "1001104":"https://i0.hdslb.com/bfs/game/player/tools/fever/96a2e2c5303ab38d9b21e4c08332a20bdfd949ef.png@.webp",
+    "1001105":"https://i0.hdslb.com/bfs/game/player/tools/fever/2db8645e1d7fe6c8cb3eb092d548475a73ee66d6.png@.webp",
     "1001107":"https://i0.hdslb.com/bfs/game/player/tools/fever/c673dc73492745da7cad2b66b5446313b0208610.png@.webp",
+    "1001203":"https://i0.hdslb.com/bfs/game/player/tools/fever/f5ca5c490aeb8957f2f2be24fd31c010e0587800.png@.webp",
     "1001204":"https://i0.hdslb.com/bfs/game/player/tools/fever/c02950d0bc0cdf9f0960c4197c8da1fd322a14e7.png@.webp",
     "1001205":"https://i0.hdslb.com/bfs/game/player/tools/fever/dff2fc47a7e3d96e4f9ec671d5a56962543ff259.png@.webp",
     "1001303":"https://i0.hdslb.com/bfs/game/player/tools/fever/f1b307836f159471ef3f72b37fdfd28134eb2826.png@.webp",
