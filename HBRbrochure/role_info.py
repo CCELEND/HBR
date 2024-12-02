@@ -24,10 +24,10 @@ style_id_all_infos = {
     "1001103":{
         "style_name":"闪光的电气脉冲", "character_role":"攻击者", "element_type":"无", "weapon_type":"斩",
     },
-    "1001104":{#不确定
+    "1001104":{
         "style_name":"黎明的感性之魂", "character_role":"攻击者", "element_type":"火", "weapon_type":"斩",
     },
-    "1001105":{#不确定
+    "1001105":{
         "style_name":"红衣主教的残响", "character_role":"攻击者", "element_type":"光", "weapon_type":"斩",
     },
     "1001107":{
