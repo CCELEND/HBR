@@ -42,6 +42,9 @@ style_id_all_infos = {
     "1001205":{
         "style_name":"夜间巡航随从", "character_role":"破盾者", "element_type":"雷", "weapon_type":"突",
     },
+    "1001207":{
+        "style_name":"舞动的轮回", "character_role":"破盾者", "element_type":"光", "weapon_type":"突",
+    },
     "1001303":{
         "style_name":"窒息强击", "character_role":"减益者", "element_type":"无", "weapon_type":"打",
     },
@@ -71,6 +74,9 @@ style_id_all_infos = {
     },
     "1001706":{
         "style_name":"猛冲！！空气贝斯", "character_role":"治疗者", "element_type":"雷", "weapon_type":"斩",
+    },
+    "1001707":{
+        "style_name":"梦幻珊瑚", "character_role":"治疗者", "element_type":"光", "weapon_type":"斩",
     },
 
 
@@ -155,6 +161,9 @@ style_id_all_infos = {
     },
     "1004104":{
         "style_name":"Infernal Sanctuary", "character_role":"破坏者", "element_type":"雷", "weapon_type":"斩",
+    },
+    "1004106":{
+        "style_name":"盛夏的近卫", "character_role":"攻击者", "element_type":"暗", "weapon_type":"斩",
     },
     "1004203":{
         "style_name":"黑夜散去，一闪心静", "character_role":"攻击者", "element_type":"暗", "weapon_type":"打",
@@ -242,6 +251,9 @@ style_id_all_infos = {
     },
     "1007503":{
         "style_name":"刀光凛冽", "character_role":"攻击者", "element_type":"暗", "weapon_type":"斩",
+    },
+    "1007504":{
+        "style_name":"衣香犹记化梦蝶", "character_role":"攻击者", "element_type":"无", "weapon_type":"斩",
     },
     "1007603":{
         "style_name":"特别之日鬼舞狂刀", "character_role":"破坏者", "element_type":"暗", "weapon_type":"打",
