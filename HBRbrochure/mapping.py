@@ -27,6 +27,7 @@ style_id_brochure_id = {
     "1001203":"YIzumiDefault_R3",
     "1001204":"YIzumiYukata2022_R3",
     "1001205":"YIzumiAnniv2023_R3",
+    "1001207":"YIzumiBeauty_R3",
     "1001303":"MAikawaDefault_R3",
     "1001305":"MAikawaPrecious_R3",
     "1001306":"MAikawaMaiden_R3",
@@ -37,6 +38,7 @@ style_id_brochure_id = {
     "1001703":"TKunimiDefault_R3",
     "1001705":"TKunimiMagical_R3",
     "1001706":"TKunimiNewYear2023_R3",
+    "1001707":"TKunimiSwim2023_R3",
 
 # 31B
     "1002103":"EAoiDefault_R3",
@@ -69,6 +71,7 @@ style_id_brochure_id = {
 # 30G
     "1004103":"YShirakawaDefault_R3",
     "1004104":"YShirakawaBloom_R3",
+    "1004106":"YShirakawaSwim2023_R3"
     "1004203":"MTsukishiroDefault_R3",
     "1004303":"MKiryuDefault_R3",
     "1004403":"CSugaharaDefault_R3",
@@ -102,6 +105,7 @@ style_id_brochure_id = {
     "1007303":"SHanamuraDefault_R3",
     "1007403":"CMatsuokaDefault_R3",
     "1007503":"INatsumeDefault_R3",
+    "1007504":"INatsumeButterfly_R3",
     "1007603":"MKurosawaDefault_R3",
 
 # 31X
