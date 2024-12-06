@@ -71,7 +71,7 @@ style_id_brochure_id = {
 # 30G
     "1004103":"YShirakawaDefault_R3",
     "1004104":"YShirakawaBloom_R3",
-    "1004106":"YShirakawaSwim2023_R3"
+    "1004106":"YShirakawaSwim2023_R3",
     "1004203":"MTsukishiroDefault_R3",
     "1004303":"MKiryuDefault_R3",
     "1004403":"CSugaharaDefault_R3",
