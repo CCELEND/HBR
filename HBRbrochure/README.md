@@ -2,10 +2,10 @@
 炽焰天穹国服风格Heaven Burns Red Style Chart图鉴
 
 # install
-1、python3.11 及以上
-2、pip3 install selenium=3.1.1
-3、安装最新版本的 chrome 浏览器
-4、chromedriver 驱动
+## 1、python3.11 及以上
+## 2、pip3 install selenium=3.1.1
+## 3、安装最新版本的 chrome 浏览器
+## 4、chromedriver 驱动
 当前目录下有一个下载好的 chromedriver，版本是：130.0.6723.116 (r1356013)，
 如果不能运行就去下载最新的 Stable 稳定的版本：https://googlechromelabs.github.io/chrome-for-testing/
 
