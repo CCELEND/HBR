@@ -15,7 +15,8 @@
 
 # 测试
 1. 访问：https://game.bilibili.com/tool/hbr/#/file/more
-* 在浏览器控制台运行下面命令，得到的是风格的 ID：  
+2. 在浏览器控制台运行下面命令
+* 得到风格的 ID：  
 `document.querySelectorAll('div.style-item.card').forEach(element => {
     console.log(element.getAttribute('data-id'));
 });`
