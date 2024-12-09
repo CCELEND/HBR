@@ -21,6 +21,7 @@ role_id_names = {
 
 # 有一些风格的 id 不确定是否正确（有些角色的风格 id 并不连续。。。。）
 style_id_all_infos = {
+# 31A
     "1001103":{
         "style_name":"闪光的电气脉冲", "character_role":"攻击者", "element_type":"无", "weapon_type":"斩",
     },
@@ -79,7 +80,7 @@ style_id_all_infos = {
         "style_name":"梦幻珊瑚", "character_role":"治疗者", "element_type":"光", "weapon_type":"斩",
     },
 
-
+# 31B
     "1002103":{
         "style_name":"心绪inspire", "character_role":"防御者", "element_type":"无", "weapon_type":"打",
     },
@@ -114,7 +115,7 @@ style_id_all_infos = {
         "style_name":"兽之心暖", "character_role":"破坏者", "element_type":"雷", "weapon_type":"突",
     },
 
-
+# 31C
     "1003103":{
         "style_name":"Ebon Knight", "character_role":"攻击者", "element_type":"冰", "weapon_type":"斩",
     },
@@ -155,7 +156,7 @@ style_id_all_infos = {
         "style_name":"Crying Tears", "character_role":"攻击者", "element_type":"冰", "weapon_type":"突",
     },
 
-
+# 30G
     "1004103":{
         "style_name":"Awakening Iris", "character_role":"攻击者", "element_type":"光", "weapon_type":"斩",
     },
@@ -190,7 +191,7 @@ style_id_all_infos = {
         "style_name":"年轻老板娘的日常", "character_role":"破坏者", "element_type":"暗", "weapon_type":"斩",
     },
 
-
+#31D
     "1005103":{
         "style_name":"无上的终局", "character_role":"攻击者", "element_type":"暗", "weapon_type":"打",
     },
@@ -213,7 +214,7 @@ style_id_all_infos = {
         "style_name":"禁锢的虎鲸", "character_role":"减益者", "element_type":"无", "weapon_type":"打",
     },
 
-
+# 31E
     "1006103":{
         "style_name":"无止境慈爱的守护者", "character_role":"治疗者", "element_type":"火", "weapon_type":"打",
     },
@@ -236,7 +237,7 @@ style_id_all_infos = {
         "style_name":"危机棒极了", "character_role":"治疗者", "element_type":"无", "weapon_type":"突",
     },
 
-
+# 31F
     "1007103":{
         "style_name":"Wild Rose", "character_role":"治疗者", "element_type":"无", "weapon_type":"突",
     },
@@ -259,7 +260,7 @@ style_id_all_infos = {
         "style_name":"特别之日鬼舞狂刀", "character_role":"破坏者", "element_type":"暗", "weapon_type":"打",
     },
 
-
+# 31X
     "1008103":{
         "style_name":"摩天楼上的暗夜英雄", "character_role":"攻击者", "element_type":"雷", "weapon_type":"斩",
     },
@@ -279,7 +280,7 @@ style_id_all_infos = {
         "style_name":"逆境绽放之花", "character_role":"减益者", "element_type":"暗", "weapon_type":"突",
     },
 
-
+# AB
     "1020103":{
         "style_name":"Earth Angel", "character_role":"攻击者", "element_type":"光", "weapon_type":"斩",
     },
