@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import NoSuchElementException
 
 from mapping import GetBrochureIdByStyleId, test_style_infos
 
@@ -44,8 +45,14 @@ def click_brochure(driver, my_style_infos):
             brochure_id = GetBrochureIdByStyleId(style_id)
             limit_break_level = int(my_style_infos[style_id]["limit_break_level"])
 
-            # 查找 id 名为 brochure_id 的元素 模拟点击 limit_break_level+1 次
-            style_element = driver.find_element(By.ID, brochure_id)
+            # 查找 id 名为 brochure_id 的元素，如果没有找到说明国服图鉴还没有更新
+            try:
+                style_element = driver.find_element(By.ID, brochure_id)
+            except NoSuchElementException:
+                print("[-] No such style element, ID: " + brochure_id)
+                continue
+
+            # 模拟点击 limit_break_level+1 次
             for _ in range(limit_break_level+1):
                 style_element.click()
 
