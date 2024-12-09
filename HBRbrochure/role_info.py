@@ -280,14 +280,13 @@ style_id_all_infos = {
         "style_name":"逆境绽放之花", "character_role":"减益者", "element_type":"暗", "weapon_type":"突",
     },
 
-# AB
+# Angel Beats!
     "1020103":{
         "style_name":"Earth Angel", "character_role":"攻击者", "element_type":"光", "weapon_type":"斩",
     },
     "1020203":{
         "style_name":"Rain Fire", "character_role":"破坏者", "element_type":"火", "weapon_type":"突",
     }
-
 
 }
 
