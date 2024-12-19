@@ -61,11 +61,17 @@ style_id_all_infos = {
     "1001404":{
         "style_name":"盛夏的祈祷", "character_role":"增益者", "element_type":"火", "weapon_type":"突",
     },
+    "1001405":{
+        "style_name":"秘密特工·静谧", "character_role":"增益者", "element_type":"光", "weapon_type":"突",
+    },
     "1001503":{
         "style_name":"红莲月华之杀戮镰刀", "character_role":"破坏者", "element_type":"无", "weapon_type":"斩",
     },
     "1001504":{
         "style_name":"猩红叛乱", "character_role":"破坏者", "element_type":"火", "weapon_type":"斩",
+    },
+    "1001505":{
+        "style_name":"秘密特工·摧毁", "character_role":"破坏者", "element_type":"光", "weapon_type":"斩",
     },
     "1001703":{
         "style_name":"气势一闪天使水手", "character_role":"治疗者", "element_type":"无", "weapon_type":"斩",
