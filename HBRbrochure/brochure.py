@@ -83,7 +83,8 @@ def get_brochure(driver, style_infos):
     try:
         # 等待立华奏加载完成 绝对不是因为我是一个奏厨（
         TachibanaKanadeElement = WebDriverWait(driver, 30).until(
-            EC.visibility_of_element_located((By.ID, "AliceADefault_R3")))
+            EC.visibility_of_element_located((By.ID, "AliceADefault_R3"))
+        )
         
     except Exception as e:
         print(f"[-] {e}")
