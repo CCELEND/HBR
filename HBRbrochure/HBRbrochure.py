@@ -56,7 +56,8 @@ def get_character_role(style_item_card_element):
     style_character_role = ""
     try:
         character_roles_png_src_element = style_item_card_element.find_element(
-            By.XPATH, ".//img[contains(@class, 'character-role')]")
+            By.XPATH, ".//img[contains(@class, 'character-role')]"
+        )
         # 获取 data-src 属性值：角色属性缩略图地址
         character_roles_png_src = character_roles_png_src_element.get_attribute('data-src')
         style_character_role = FindKeyByValue(character_roles_png_srcs, character_roles_png_src)
@@ -71,7 +72,8 @@ def get_element_type(style_item_card_element):
     style_element_type = ""
     try:
         element_type_png_src_element = style_item_card_element.find_element(
-            By.XPATH, ".//img[contains(@class, 'element-type')]")
+            By.XPATH, ".//img[contains(@class, 'element-type')]"
+        )
         # 获取 data-src 属性值：风格元素属性缩略图地址
         element_type_png_src = element_type_png_src_element.get_attribute('data-src')
         style_element_type = FindKeyByValue(element_type_png_srcs, element_type_png_src)
@@ -86,7 +88,8 @@ def get_weapon_type(style_item_card_element):
     style_weapon_type = ""
     try:
         weapon_type_png_src_element = style_item_card_element.find_element(
-            By.XPATH, ".//img[contains(@class, 'weapon-type')]")
+            By.XPATH, ".//img[contains(@class, 'weapon-type')]"
+        )
         # 获取 data-src 属性值：角色武器属性缩略图地址
         weapon_type_png_src = weapon_type_png_src_element.get_attribute('data-src')
         style_weapon_type = FindKeyByValue(weapon_type_png_srcs, weapon_type_png_src)
@@ -103,10 +106,12 @@ def get_role_level(style_item_card_element):
     maximum_level = ""
     try:
         role_level_element = style_item_card_element.find_element(
-            By.XPATH, ".//div[contains(@class, 'level')]")
+            By.XPATH, ".//div[contains(@class, 'level')]"
+        )
         # 定位 level 元素三个子元素的 data-content 属性
         span_elements = role_level_element.find_elements(
-            By.XPATH, ".//span[@data-content]")
+            By.XPATH, ".//span[@data-content]"
+        )
 
         # 提取元素值
         current_level = span_elements[1].text
@@ -123,7 +128,8 @@ def get_limit_break_level(style_item_card_element):
     limit_break_level = '0'
     try:
         limit_break_level_element = style_item_card_element.find_element(
-            By.XPATH, ".//div[contains(@class, 'limit-break-level')]")
+            By.XPATH, ".//div[contains(@class, 'limit-break-level')]"
+        )
         limit_break_level = limit_break_level_element.text
 
     except Exception as e:
@@ -134,7 +140,8 @@ def get_limit_break_level(style_item_card_element):
 def switch_to_brochure(driver, style_infos):
     # 使用 JavaScript 打开新标签页
     driver.execute_script(
-        "window.open('https://leprechaun-chtholly-nota-seniorious.github.io/HeavenBurnsRedStyleChart.html');")
+        "window.open('https://leprechaun-chtholly-nota-seniorious.github.io/HeavenBurnsRedStyleChart.html');"
+    )
 
     # 获取所有窗口句柄
     handles = driver.window_handles
@@ -154,11 +161,13 @@ try:
 
     # 等待 class 为 card-box 的元素加载完成
     card_box_element = WebDriverWait(driver, 30).until(
-        EC.visibility_of_element_located((By.CLASS_NAME, "card-box")))
+        EC.visibility_of_element_located((By.CLASS_NAME, "card-box"))
+    )
 
     # 查找类名为 style-item card 的 <div> 元素
     style_item_card_elements = card_box_element.find_elements(
-        By.XPATH, ".//div[contains(@class, 'style-item') and contains(@class, 'card')]")
+        By.XPATH, ".//div[contains(@class, 'style-item') and contains(@class, 'card')]"
+    )
 
     my_style_num = 0
     my_style_ids = []
