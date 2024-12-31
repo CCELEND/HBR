@@ -178,6 +178,9 @@ style_id_all_infos = {
     "1004303":{
         "style_name":"星林的留客雨", "character_role":"减益者", "element_type":"光", "weapon_type":"突",
     },
+    "1004304":{
+        "style_name":"丰饶喜乐神秘莫测", "character_role":"减益者", "element_type":"雷", "weapon_type":"突",
+    },
     "1004403":{
         "style_name":"末日洛丽塔白书", "character_role":"防御者", "element_type":"无", "weapon_type":"打",
     },
@@ -230,6 +233,9 @@ style_id_all_infos = {
     "1006203":{
         "style_name":"Brand New Mind", "character_role":"破坏者", "element_type":"火", "weapon_type":"斩",
     },
+    "1006205":{
+        "style_name":"激情满满的温泉之旅", "character_role":"攻击者", "element_type":"光", "weapon_type":"斩",
+    },
     "1006303":{
         "style_name":"Realize Your Mind", "character_role":"攻击者", "element_type":"火", "weapon_type":"打",
     },
@@ -239,6 +245,9 @@ style_id_all_infos = {
     "1006503":{
         "style_name":"制胜之锁", "character_role":"减益者", "element_type":"火", "weapon_type":"斩",
     },
+    "1006504":{
+        "style_name":"出浴后的朦胧天地", "character_role":"减益者", "element_type":"无", "weapon_type":"斩",
+    },
     "1006603":{
         "style_name":"危机棒极了", "character_role":"治疗者", "element_type":"无", "weapon_type":"突",
     },
@@ -246,6 +255,9 @@ style_id_all_infos = {
 # 31F
     "1007103":{
         "style_name":"Wild Rose", "character_role":"治疗者", "element_type":"无", "weapon_type":"突",
+    },
+    "1007104":{
+        "style_name":"深夜疾风拂面时", "character_role":"治疗者", "element_type":"无", "weapon_type":"突",
     },
     "1007203":{
         "style_name":"不断进化的敏感性", "character_role":"破盾者", "element_type":"暗", "weapon_type":"突",
