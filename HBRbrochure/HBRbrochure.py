@@ -19,6 +19,26 @@ from png_src import style_png_srcs
 
 import brochure
 
+def list_newline(you_list, how_projects_newline):
+    for i in range(0, len(you_list), how_projects_newline):
+        print(", ".join(map(str, you_list[i:i+how_projects_newline])))
+
+
+def dir_newline(you_dir, how_projects_newline):
+    # 初始化计数器
+    count = 0
+    # 遍历字典的项
+    for key, value in you_dir.items():
+        # 输出键值对，格式为 "key: value"
+        print(f"{key}: {value}", 
+            end=", " if count % how_projects_newline != 2 else "\n")
+        # 更新计数器
+        count += 1
+
+    # 如果最后一行不足 how_projects_newline 项，需要手动换行
+    if count % how_projects_newline != 0:
+        print()
+
 
 def FindKeyByValue(dict, value_to_find):
     for key, value in dict.items():
@@ -222,7 +242,7 @@ try:
 
     print(f"[+] 拥有的 SS 风格数: {len(my_style_ids)}")
     print("[+] SS 风格 ID:")
-    print(my_style_ids)
+    list_newline(my_style_ids, 6)
 
     # print("[+] SS 角色属性:")
     # print(my_style_character_roles)
@@ -232,9 +252,9 @@ try:
     # print(my_style_weapon_types)
     
     print("[+] SS 风格等级:")
-    print(my_style_levels)
+    dir_newline(my_style_levels, 3)
     print("[+] SS 风格上限突破:")
-    print(limit_break_levels)
+    dir_newline(limit_break_levels, 6)
 
     # 打开并切换到新标签页
     switch_to_brochure(driver, my_style_infos)
