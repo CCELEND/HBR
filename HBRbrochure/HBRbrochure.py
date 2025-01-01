@@ -31,7 +31,7 @@ def dir_newline(you_dir, how_projects_newline):
     for key, value in you_dir.items():
         # 输出键值对，格式为 "key: value"
         print(f"{key}: {value}", 
-            end=", " if count % how_projects_newline != 2 else "\n")
+            end = ", " if count % how_projects_newline != 2 else "\n")
         count += 1
 
     # 如果最后一行不足 how_projects_newline 项，需要手动换行
