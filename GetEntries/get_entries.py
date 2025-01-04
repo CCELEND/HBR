@@ -105,12 +105,12 @@ def save_index_wash_entries_to_file(index_wash_entries):
 def main():
     
     # 洗词条
-    ChangeAbility_seed = "1669054936"
-    ChangeAbility_index = "6134"
+    ChangeAbility_seed = ""
+    ChangeAbility_index = ""
 
     # 打装备
-    RandomMainAbility_seed = "3843981395"
-    RandomMainAbility_index = "1854"
+    RandomMainAbility_seed = ""
+    RandomMainAbility_index = ""
     try:
         print("洗词条:")
         index_wash_entries = get_index_wash_entries(ChangeAbility_seed, ChangeAbility_index, count=100)
