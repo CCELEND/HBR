@@ -136,9 +136,9 @@ def check_empty_values(
     empty_variables_message = "以下变量为空: " + ", ".join(empty_variables) 
     if empty_variables:
         print(empty_variables_message)
-        return False
-    else:
         return True
+    else:
+        return False
 
 
 def main():
@@ -157,7 +157,7 @@ def main():
         # 获取数据条目数
         DataCount = config.getint('Count', 'DataCount')
 
-        if not check_empty_values(ChangeAbility_seed, ChangeAbility_index, 
+        if check_empty_values(ChangeAbility_seed, ChangeAbility_index, 
             RandomMainAbility_seed, RandomMainAbility_index, 
             DataCount):
             print("[-] 请修改配置文件 config.ini")
