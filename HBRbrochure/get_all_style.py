@@ -60,6 +60,7 @@ try:
 
     # 定位到 content_element
     content_element = driver.find_element(By.CSS_SELECTOR, "[data-v-f8b6e8b1].content")
+    # 元素的滑动效果通过 CSS 的 transform 属性
     driver.execute_script(
         "arguments[0].style.transform = 'translateX(0px) translateY(-120px) translateZ(1px)';", 
         content_element
