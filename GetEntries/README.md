@@ -1,5 +1,5 @@
-# 词条自动化获取脚本
-
+# 词条自动化获取脚本  
+自动获取词条数据并保存为 Excel 文件，顶级词条行用黄色背景填充
 # Install
 1. python3.9 及以上
 2. numpy, pandas, openpyxl, requests  
