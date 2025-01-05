@@ -140,9 +140,7 @@ def check_empty_values(
     else:
         return False
 
-
 def main():
-
     try:
         config = configparser.ConfigParser()
         config.read('config.ini')
@@ -162,7 +160,6 @@ def main():
             DataCount):
             print("[-] 请修改配置文件 config.ini")
         else:
-            
             print("洗词条:")
             index_wash_entries = get_index_wash_entries(
                 ChangeAbility_seed, 
