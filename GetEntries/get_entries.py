@@ -12,6 +12,8 @@ import requests
 import pandas as pd
 import openpyxl
 from openpyxl.styles import PatternFill
+from openpyxl.utils.dataframe import dataframe_to_rows
+from openpyxl.utils import get_column_letter
 
 # 每次失败后等待2秒钟，并最多重试3次
 def get_data_from_url(url, retries=3, delay=2):
@@ -79,7 +81,12 @@ def save_index_equipments_to_file(index_equipments):
         for idx, row in df.iterrows():
             if row['DP'] == "DP +1200":
                 for col in range(1, len(df.columns) + 1):  # +1 因为 openpyxl 是 1-indexed
-                    worksheet.cell(row=idx + 2, column=col).fill = yellow_fill  
+                    worksheet.cell(row=idx + 2, column=col).fill = yellow_fill
+
+        # 设置每列的宽度
+        column_widths = [10, 14, 12, 12, 22, 12, 12, 20]
+        for i, width in enumerate(column_widths, start=1):
+            worksheet.column_dimensions[get_column_letter(i)].width = width
 
 def save_index_wash_entries_to_file(index_wash_entries):
     # 将字典转换为 DataFrame
@@ -101,6 +108,11 @@ def save_index_wash_entries_to_file(index_wash_entries):
             if '+3' in str(row['词条']) and ('+30' not in str(row['词条'])):
                 for col in range(1, len(df.columns) + 1):  # +1 因为 openpyxl 是 1-indexed
                     worksheet.cell(row=idx + 2, column=col).fill = yellow_fill  # +2因为标题行
+
+        # 设置每列的宽度
+        column_widths = [10, 14]
+        for i, width in enumerate(column_widths, start=1):
+            worksheet.column_dimensions[get_column_letter(i)].width = width
 
 def main():
     
