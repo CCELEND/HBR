@@ -20,3 +20,18 @@ RandomMainAbility_index=
 DataCount=100
 2. 运行  
 `python get_entries.py`
+# api 测试
+1. 访问：https://hbrapi.fuyumi.xyz/
+2. 在浏览器控制台运行下面命令
+* 洗词条 api:  
+`t = await fetch(
+	window.location.href + 'api/ChangeAbility?_seed=' + 1669054936 + '&_index=' + 6186
+),
+a = await t.json();
+console.log(a);`
+* 打装备 api:  
+`t = await fetch(
+	window.location.href + 'api/RandomMainAbility?_seed=' + 3843981395 + '&_index=' + 1854
+),
+a = await t.json();
+console.log(a);`
