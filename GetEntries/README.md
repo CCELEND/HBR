@@ -14,6 +14,10 @@ ChangeAbility_seed = ""
 ChangeAbility_index = ""  
 * 填入装备的 seed 和 index:  
 RandomMainAbility_seed = ""  
-RandomMainAbility_index = ""  
+RandomMainAbility_index = ""
+* 控制获取数据数:
+修改 count 即可，这里是获取100条数据  
+index_wash_entries = get_index_wash_entries(ChangeAbility_seed, ChangeAbility_index, count=100)  
+index_equipments = get_index_equipments(RandomMainAbility_seed, RandomMainAbility_index, count=100)  
 2. 运行  
 `python get_entries.py`
