@@ -8,6 +8,7 @@
 # 使用: python get_entries.py
 
 import os
+import configparser
 import requests
 import pandas as pd
 import openpyxl
@@ -114,34 +115,78 @@ def save_index_wash_entries_to_file(index_wash_entries):
         for i, width in enumerate(column_widths, start=1):
             worksheet.column_dimensions[get_column_letter(i)].width = width
 
-def main():
+
+def check_empty_values(
+    ChangeAbility_seed, ChangeAbility_index, 
+    RandomMainAbility_seed, RandomMainAbility_index, 
+    DataCount):
     
-    # 洗词条
-    ChangeAbility_seed = ""
-    ChangeAbility_index = ""
+    empty_variables = []
+    if not ChangeAbility_seed:
+        empty_variables.append('ChangeAbility_seed')
+    if not ChangeAbility_index:
+        empty_variables.append('ChangeAbility_index')
+    if not RandomMainAbility_seed:
+        empty_variables.append('RandomMainAbility_seed')
+    if not RandomMainAbility_index:
+        empty_variables.append('RandomMainAbility_index')
+    if DataCount is None:
+        empty_variables.append('DataCount')
 
-    # 打装备
-    RandomMainAbility_seed = ""
-    RandomMainAbility_index = ""
+    empty_variables_message = "以下变量为空: " + ", ".join(empty_variables) 
+    if empty_variables:
+        print(empty_variables_message)
+        return False
+    else:
+        return True
+
+
+def main():
+
     try:
-        print("洗词条:")
-        index_wash_entries = get_index_wash_entries(ChangeAbility_seed, ChangeAbility_index, count=100)
-        print_dir(index_wash_entries)
+        config = configparser.ConfigParser()
+        config.read('config.ini')
 
-        # 保存为 Excel 文件
-        save_index_wash_entries_to_file(index_wash_entries)
+        # 将配置文件中的值分配给变量
+        # 洗词条
+        ChangeAbility_seed = config.get('ChangeAbility', 'ChangeAbility_seed', fallback="")
+        ChangeAbility_index = config.get('ChangeAbility', 'ChangeAbility_index', fallback="")
+        # 打装备
+        RandomMainAbility_seed = config.get('RandomMainAbility', 'RandomMainAbility_seed', fallback="")
+        RandomMainAbility_index = config.get('RandomMainAbility', 'RandomMainAbility_index', fallback="")
+        # 获取数据条目数
+        DataCount = config.getint('Count', 'DataCount')
 
-        print("打装备:")
-        index_equipments = get_index_equipments(RandomMainAbility_seed, RandomMainAbility_index, count=100)
-        print_dir(index_equipments)
+        if not check_empty_values(ChangeAbility_seed, ChangeAbility_index, 
+            RandomMainAbility_seed, RandomMainAbility_index, 
+            DataCount):
+            print("[-] 请修改配置文件 config.ini")
+        else:
+            
+            print("洗词条:")
+            index_wash_entries = get_index_wash_entries(
+                ChangeAbility_seed, 
+                ChangeAbility_index, 
+                count=DataCount
+            )
+            print_dir(index_wash_entries)
+            # 保存为 Excel 文件
+            save_index_wash_entries_to_file(index_wash_entries)
 
-        # 保存为 Excel 文件
-        save_index_equipments_to_file(index_equipments)
+            print("打装备:")
+            index_equipments = get_index_equipments(
+                RandomMainAbility_seed, 
+                RandomMainAbility_index, 
+                count=DataCount
+            )
+            print_dir(index_equipments)
+            # 保存为 Excel 文件
+            save_index_equipments_to_file(index_equipments)
+
+        input()
 
     except Exception as e:
         print(f"[-] {e}")
-
-    input()
 
 if __name__ == "__main__":
     main()
