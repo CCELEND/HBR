@@ -21,9 +21,9 @@ DataCount=100
 2. 运行
 * 获取洗孔和装备的词条:  
 `python get_entries.py`
-* 只获取洗孔词条:
+* 只获取洗孔词条:  
 `python get_index_wash_entries.py`
-* 只获取装备词条:
+* 只获取装备词条:  
 `python get_index_equipments.py`  
 # api 测试
 1. 访问：https://hbrapi.fuyumi.xyz/
