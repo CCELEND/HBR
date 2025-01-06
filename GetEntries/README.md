@@ -18,8 +18,13 @@ RandomMainAbility_index=
 * 控制获取数据数:  
 修改 DataCount(50倍数) 即可，这里默认是获取100条数据  
 DataCount=100
-2. 运行  
+2. 运行
+* 获取洗孔和装备的词条:  
 `python get_entries.py`
+* 只获取洗孔词条:
+`python get_index_wash_entries.py`
+* 只获取装备词条:
+`python get_index_equipments.py`  
 # api 测试
 1. 访问：https://hbrapi.fuyumi.xyz/
 2. 在浏览器控制台运行下面命令
