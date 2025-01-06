@@ -11,7 +11,7 @@
 如果不能运行就去下载最新的 Stable 稳定的版本：https://googlechromelabs.github.io/chrome-for-testing/
 
 # Use
-运行 HBRbrochure.py 即可
+双击运行 HBRbrochure.py 即可，要想获取目前国服全部的 SS 风格 ID，请双击运行 get_all_style.py
 
 # 测试
 1. 访问：https://game.bilibili.com/tool/hbr/#/file/more
