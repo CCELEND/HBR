@@ -53,7 +53,7 @@ try:
     
 
     # 等待元素加载完成并可见
-    filter_SS_element = WebDriverWait(driver, 10).until(
+    filter_SS_element = WebDriverWait(driver, 30).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-id="SS"]')))
     # 点击元素
     filter_SS_element.click()
