@@ -25,7 +25,7 @@ DataCount=100
 `python get_index_wash_entries.py`
 * 只获取装备词条:  
 `python get_index_equipments.py`  
-# api 测试
+# api 测试（开发测试用）
 1. 访问：https://hbrapi.fuyumi.xyz/
 2. 在浏览器控制台运行下面命令
 * 洗词条 api:  
