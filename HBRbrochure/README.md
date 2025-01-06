@@ -13,7 +13,7 @@
 # Use
 双击运行 HBRbrochure.py 即可，要想获取目前国服全部的 SS 风格 ID，请双击运行 get_all_style.py
 
-# 测试
+# 测试（开发测试用）
 1. 访问：https://game.bilibili.com/tool/hbr/#/file/more
 2. 在浏览器控制台运行下面命令
 * 得到风格的 ID：  
