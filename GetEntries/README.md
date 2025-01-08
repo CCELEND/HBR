@@ -25,7 +25,7 @@ DataCount=100
 `python get_index_wash_entries.py`
 * 只获取装备词条:  
 `python get_index_equipments.py`
-* GUI 的版本：
+* GUI 的版本：  
 `python GetEntriesGUI.py`
 # api 测试（开发测试用）
 1. 访问：https://hbrapi.fuyumi.xyz/
