@@ -172,7 +172,10 @@ def get_index_wash_entries(index_wash_entries):
     for num in range(0, int(DataCount) // 50):  # 每个请求获取50个条目
         url = f"https://hbrapi.fuyumi.xyz/api/ChangeAbility?_seed={ChangeAbility_seed}&_index={ChangeAbility_index}"
         data = get_data_from_url(url)
-        index_wash_entries.update({str(int(ChangeAbility_index) + i + 1): data[str(i)] for i in range(50)})
+        index_wash_entries.update({
+            str(int(ChangeAbility_index) + i + 1): data[str(i)] 
+            for i in range(50)
+        })
         ChangeAbility_index = str(int(ChangeAbility_index) + 50)
 
     print_dir(index_wash_entries)
@@ -201,7 +204,10 @@ def get_index_equipments(index_equipments):
     for num in range(0, int(DataCount) // 50):  # 每个请求获取50个条目
         url = f"https://hbrapi.fuyumi.xyz/api/RandomMainAbility?_seed={RandomMainAbility_seed}&_index={RandomMainAbility_index}"
         data = get_data_from_url(url)
-        index_equipments.update({str(int(RandomMainAbility_index) + i + 1): data[str(i)].split('/') for i in range(50)})
+        index_equipments.update({
+            str(int(RandomMainAbility_index) + i + 1): [s.strip() for s in data[str(i)].split('/')]
+            for i in range(50)
+        })
         RandomMainAbility_index = str(int(RandomMainAbility_index) + 50)
 
     print_dir(index_equipments)
