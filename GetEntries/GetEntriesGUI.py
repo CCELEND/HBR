@@ -16,98 +16,98 @@ from openpyxl.utils import get_column_letter
 
 # 右键复制
 def copy_text(event, text_widget):
-	try:
-		# 获取选中的文本
-		selected_text = text_widget.get("sel.first", "sel.last")
-		if selected_text:
-			text_widget.clipboard_clear()
-			text_widget.clipboard_append(selected_text)
-	except tk.TclError:
-		pass  # 如果没有选中文本，忽略错误
+    try:
+        # 获取选中的文本
+        selected_text = text_widget.get("sel.first", "sel.last")
+        if selected_text:
+            text_widget.clipboard_clear()
+            text_widget.clipboard_append(selected_text)
+    except tk.TclError:
+        pass  # 如果没有选中文本，忽略错误
 
 # 右键粘贴
 def paste_text(event, text_widget):
-	try:
-		text_widget.insert(tk.INSERT, text_widget.clipboard_get())
-	except tk.TclError:
-		pass  # 如果剪贴板为空，忽略错误
+    try:
+        text_widget.insert(tk.INSERT, text_widget.clipboard_get())
+    except tk.TclError:
+        pass  # 如果剪贴板为空，忽略错误
 
 # 右键剪切
 def cut_text(event, text_widget):
-	try:
-		selected_text = text_widget.get("sel.first", "sel.last")
-		if selected_text:
-			text_widget.clipboard_clear()
-			text_widget.clipboard_append(selected_text)
-			text_widget.delete("sel.first", "sel.last")
-	except tk.TclError:
-		pass
+    try:
+        selected_text = text_widget.get("sel.first", "sel.last")
+        if selected_text:
+            text_widget.clipboard_clear()
+            text_widget.clipboard_append(selected_text)
+            text_widget.delete("sel.first", "sel.last")
+    except tk.TclError:
+        pass
 
 # 右键菜单
 def show_context_menu(event, text_widget):
-	# 创建上下文菜单
-	context_menu = Menu(text_widget, tearoff=0)
-	context_menu.add_command(label="复制", command=lambda e=event: copy_text(e, text_widget))
-	context_menu.add_command(label="粘贴", command=lambda e=event: paste_text(e, text_widget))
-	context_menu.add_command(label="剪切", command=lambda e=event: cut_text(e, text_widget))
-	# 在鼠标右键点击的位置显示菜单
-	context_menu.tk_popup(event.x_root, event.y_root)
-	context_menu.grab_release()
+    # 创建上下文菜单
+    context_menu = Menu(text_widget, tearoff=0)
+    context_menu.add_command(label="复制", command=lambda e=event: copy_text(e, text_widget))
+    context_menu.add_command(label="粘贴", command=lambda e=event: paste_text(e, text_widget))
+    context_menu.add_command(label="剪切", command=lambda e=event: cut_text(e, text_widget))
+    # 在鼠标右键点击的位置显示菜单
+    context_menu.tk_popup(event.x_root, event.y_root)
+    context_menu.grab_release()
 
 def clear_entries():
-	index_wash_entries.clear()
-	index_equipments.clear()
+    index_wash_entries.clear()
+    index_equipments.clear()
 
 # 清空输入输出框及字典
 def clear_text(*text_widgets):
-	for text_widget in text_widgets:
-		if text_widget.cget('state') == tk.DISABLED:
-			text_widget.config(state=tk.NORMAL)
-			text_widget.delete("1.0", tk.END)
-			text_widget.config(state=tk.DISABLED)
-		else:
-			text_widget.delete("1.0", tk.END)
+    for text_widget in text_widgets:
+        if text_widget.cget('state') == tk.DISABLED:
+            text_widget.config(state=tk.NORMAL)
+            text_widget.delete("1.0", tk.END)
+            text_widget.config(state=tk.DISABLED)
+        else:
+            text_widget.delete("1.0", tk.END)
 
-	clear_entries()
+    clear_entries()
 
 # 编辑文本框
 def edit_text(text_widget, data):
-	if text_widget.cget('state') == tk.DISABLED:
-		text_widget.config(state=tk.NORMAL)
-		text_widget.delete("1.0", tk.END)
-		text_widget.insert(tk.END, data)
-		text_widget.config(state=tk.DISABLED)
-	else:
-		text_widget.delete("1.0", tk.END)
-		text_widget.insert(tk.END, data)
+    if text_widget.cget('state') == tk.DISABLED:
+        text_widget.config(state=tk.NORMAL)
+        text_widget.delete("1.0", tk.END)
+        text_widget.insert(tk.END, data)
+        text_widget.config(state=tk.DISABLED)
+    else:
+        text_widget.delete("1.0", tk.END)
+        text_widget.insert(tk.END, data)
 
-	# 每次失败后等待2秒钟，并最多重试3次
+    # 每次失败后等待2秒钟，并最多重试3次
 def get_data_from_url(url, retries=3, delay=2):
-	for i in range(retries):
-		try:
-			response = requests.get(url)
-			response.raise_for_status()  # 如果响应状态码不是200，将引发HTTPError异常
-			return response.json()
-		except requests.exceptions.HTTPError as errh:
-			messagebox.showerror("错误", f"HTTP Error: {errh}")
-		except requests.exceptions.ConnectionError as errc:
-			messagebox.showerror("错误", f"Error Connecting: {errc}")
-		except requests.exceptions.Timeout as errt:
-			messagebox.showerror("错误", f"Timeout Error: {errt}")
-		except requests.exceptions.RequestException as err:
-			messagebox.showerror("错误", f"Error: {err}")
+    for i in range(retries):
+        try:
+            response = requests.get(url)
+            response.raise_for_status()  # 如果响应状态码不是200，将引发HTTPError异常
+            return response.json()
+        except requests.exceptions.HTTPError as errh:
+            messagebox.showerror("错误", f"HTTP Error: {errh}")
+        except requests.exceptions.ConnectionError as errc:
+            messagebox.showerror("错误", f"Error Connecting: {errc}")
+        except requests.exceptions.Timeout as errt:
+            messagebox.showerror("错误", f"Timeout Error: {errt}")
+        except requests.exceptions.RequestException as err:
+            messagebox.showerror("错误", f"Error: {err}")
 
-		messagebox.showinfo("提示", f"{delay} 秒后重试...")
-		time.sleep(delay)
+        messagebox.showinfo("提示", f"{delay} 秒后重试...")
+        time.sleep(delay)
 
-	return None  # 如果所有重试都失败，则返回 None
+    return None  # 如果所有重试都失败，则返回 None
 
 def print_dir(dir_data):
-	data = ""
-	for key, value in dir_data.items():
-		data += f"{key}: {value}\n"
+    data = ""
+    for key, value in dir_data.items():
+        data += f"{key}: {value}\n"
 
-	edit_text(output_text, data)
+    edit_text(output_text, data)
 
 def check_wash_entries(
     ChangeAbility_seed, ChangeAbility_index, 
@@ -151,69 +151,69 @@ def check_equipments(
 # 获取洗孔的词条字典
 def get_index_wash_entries(index_wash_entries):
 
-	if not os.path.exists("config.ini"):
-		messagebox.showerror("错误", "配置文件 config.ini 不存在")
-		return
+    if not os.path.exists("config.ini"):
+        messagebox.showerror("错误", "配置文件 config.ini 不存在")
+        return
 
-	config = configparser.ConfigParser()
-	config.read('config.ini')
+    config = configparser.ConfigParser()
+    config.read('config.ini')
 
-	# 将配置文件中的值分配给变量
-	# 洗词条
-	ChangeAbility_seed = config.get('ChangeAbility', 'ChangeAbility_seed', fallback="")
-	ChangeAbility_index = config.get('ChangeAbility', 'ChangeAbility_index', fallback="")
-	# 获取数据条目数
-	DataCount = config.get('Count', 'DataCount', fallback="")
+    # 将配置文件中的值分配给变量
+    # 洗词条
+    ChangeAbility_seed = config.get('ChangeAbility', 'ChangeAbility_seed', fallback="")
+    ChangeAbility_index = config.get('ChangeAbility', 'ChangeAbility_index', fallback="")
+    # 获取数据条目数
+    DataCount = config.get('Count', 'DataCount', fallback="")
 
-	if check_wash_entries(ChangeAbility_seed, ChangeAbility_index, DataCount):
-		return
+    if check_wash_entries(ChangeAbility_seed, ChangeAbility_index, DataCount):
+        return
 
-	clear_entries()
-	for num in range(0, int(DataCount) // 50):  # 每个请求获取50个条目
-		url = f"https://hbrapi.fuyumi.xyz/api/ChangeAbility?_seed={ChangeAbility_seed}&_index={ChangeAbility_index}"
-		data = get_data_from_url(url)
-		index_wash_entries.update({str(int(ChangeAbility_index) + i + 1): data[str(i)] for i in range(50)})
-		ChangeAbility_index = str(int(ChangeAbility_index) + 50)
+    clear_entries()
+    for num in range(0, int(DataCount) // 50):  # 每个请求获取50个条目
+        url = f"https://hbrapi.fuyumi.xyz/api/ChangeAbility?_seed={ChangeAbility_seed}&_index={ChangeAbility_index}"
+        data = get_data_from_url(url)
+        index_wash_entries.update({str(int(ChangeAbility_index) + i + 1): data[str(i)] for i in range(50)})
+        ChangeAbility_index = str(int(ChangeAbility_index) + 50)
 
-	print_dir(index_wash_entries)
+    print_dir(index_wash_entries)
 
 # 获取装备的词条字典
 def get_index_equipments(index_equipments):
 
-	if not os.path.exists("config.ini"):
-		messagebox.showerror("错误", "配置文件 config.ini 不存在！")
-		return
+    if not os.path.exists("config.ini"):
+        messagebox.showerror("错误", "配置文件 config.ini 不存在！")
+        return
 
-	config = configparser.ConfigParser()
-	config.read('config.ini')
+    config = configparser.ConfigParser()
+    config.read('config.ini')
 
-	# 将配置文件中的值分配给变量
-	# 打装备
-	RandomMainAbility_seed = config.get('RandomMainAbility', 'RandomMainAbility_seed', fallback="")
-	RandomMainAbility_index = config.get('RandomMainAbility', 'RandomMainAbility_index', fallback="")
-	# 获取数据条目数
-	DataCount = config.get('Count', 'DataCount', fallback="")
+    # 将配置文件中的值分配给变量
+    # 打装备
+    RandomMainAbility_seed = config.get('RandomMainAbility', 'RandomMainAbility_seed', fallback="")
+    RandomMainAbility_index = config.get('RandomMainAbility', 'RandomMainAbility_index', fallback="")
+    # 获取数据条目数
+    DataCount = config.get('Count', 'DataCount', fallback="")
 
-	if check_equipments(RandomMainAbility_seed, RandomMainAbility_index, DataCount):
-		return
+    if check_equipments(RandomMainAbility_seed, RandomMainAbility_index, DataCount):
+        return
 
-	clear_entries()
-	for num in range(0, int(DataCount) // 50):  # 每个请求获取50个条目
-		url = f"https://hbrapi.fuyumi.xyz/api/RandomMainAbility?_seed={RandomMainAbility_seed}&_index={RandomMainAbility_index}"
-		data = get_data_from_url(url)
-		index_equipments.update({str(int(RandomMainAbility_index) + i + 1): data[str(i)].split('/') for i in range(50)})
-		RandomMainAbility_index = str(int(RandomMainAbility_index) + 50)
+    clear_entries()
+    for num in range(0, int(DataCount) // 50):  # 每个请求获取50个条目
+        url = f"https://hbrapi.fuyumi.xyz/api/RandomMainAbility?_seed={RandomMainAbility_seed}&_index={RandomMainAbility_index}"
+        data = get_data_from_url(url)
+        index_equipments.update({str(int(RandomMainAbility_index) + i + 1): data[str(i)].split('/') for i in range(50)})
+        RandomMainAbility_index = str(int(RandomMainAbility_index) + 50)
 
-	print_dir(index_equipments)
+    print_dir(index_equipments)
 
 
 def save_to_file():
-	if index_wash_entries:
-		save_index_wash_entries_to_file(index_wash_entries)
-	elif index_equipments:
-		save_index_equipments_to_file(index_equipments)
-	else:
-		messagebox.showinfo("提示", "无数据，请获取词条")
+    if index_wash_entries:
+        save_index_wash_entries_to_file(index_wash_entries)
+    elif index_equipments:
+        save_index_equipments_to_file(index_equipments)
+    else:
+        messagebox.showinfo("提示", "无数据，请获取词条")
 
 
 def save_index_equipments_to_file(index_equipments):
@@ -297,7 +297,7 @@ get_entries_frame.grid_rowconfigure(0, weight=1)
 
 # 输出框
 output_text = scrolledtext.ScrolledText(get_entries_frame, 
-	wrap=tk.WORD, width=50, height=20)
+    wrap=tk.WORD, width=50, height=20)
 output_text.grid(row=0, column=0, columnspan=3, padx=(10,0), pady=0, sticky="nsew")
 # 绑定鼠标右键点击事件到上下文菜单
 output_text.bind("<Button-3>", lambda event, tw=output_text: show_context_menu(event, tw))
@@ -316,22 +316,22 @@ index_wash_entries = {}
 index_equipments = {}
 # 洗孔词条按钮
 get_index_equipments_button = tk.Button(buttons_frame, 
-	width=20, text="获取洗孔词条", command=lambda: get_index_wash_entries(index_wash_entries))
+    width=20, text="获取洗孔词条", command=lambda: get_index_wash_entries(index_wash_entries))
 get_index_equipments_button.grid(row=0, column=0, padx=(0,10), pady=(10,0))
 # 装备词条按钮
 get_index_equipments_button = tk.Button(buttons_frame, 
-	width=20, text="获取装备词条", command=lambda: get_index_equipments(index_equipments))
+    width=20, text="获取装备词条", command=lambda: get_index_equipments(index_equipments))
 get_index_equipments_button.grid(row=1, column=0, padx=(0,10), pady=(10,0))
 
 
 # 创建清空按钮
 clear_button = tk.Button(buttons_frame, 
-	width=20, text="清空", command=lambda: clear_text(output_text))
+    width=20, text="清空", command=lambda: clear_text(output_text))
 clear_button.grid(row=2, column=0, padx=(0,10), pady=(10,0))
 
 # 创建保存 Excel 文件按钮
 save_file_button = tk.Button(buttons_frame, 
-	width=20, text="保存为 Excel 文件", command=save_to_file)
+    width=20, text="保存为 Excel 文件", command=save_to_file)
 save_file_button.grid(row=3, column=0, padx=(0,10), pady=(10,0))
 
 root.mainloop()
