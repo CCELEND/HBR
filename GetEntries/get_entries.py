@@ -56,9 +56,8 @@ def get_index_equipments(seed, start_index, count=100):
     for num in range(0, count // 50):  # 每个请求获取50个条目
         url = f"https://hbrapi.fuyumi.xyz/api/RandomMainAbility?_seed={seed}&_index={start_index}"
         data = get_data_from_url(url)
-        # index_equipments.update({str(int(start_index) + i + 1): data[str(i)] for i in range(50)})
         index_equipments.update({
-            str(int(start_index) + i + 1): data[str(i)].split('/') 
+            str(int(start_index) + i + 1): [s.strip() for s in data[str(i)].split('/')]
             for i in range(50)
         })
         start_index = str(int(start_index) + 50)
