@@ -43,7 +43,10 @@ def get_index_wash_entries(seed, start_index, count=100):
     for num in range(0, count // 50):  # 每个请求获取50个条目
         url = f"https://hbrapi.fuyumi.xyz/api/ChangeAbility?_seed={seed}&_index={start_index}"
         data = get_data_from_url(url)
-        index_wash_entries.update({str(int(start_index) + i + 1): data[str(i)] for i in range(50)})
+        index_wash_entries.update({
+            str(int(start_index) + i + 1): data[str(i)] 
+            for i in range(50)
+        })
         start_index = str(int(start_index) + 50)
     return index_wash_entries
 
