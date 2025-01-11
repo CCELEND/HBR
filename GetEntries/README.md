@@ -42,3 +42,5 @@ console.log(a);`
 ),
 a = await t.json();
 console.log(a);`
+# 关于新饰品吊饰
+吊饰用的是装备词条，每炼金一次 index+1。顶级词条可以获得+3或者+4的吊饰，概率估计各50%。
