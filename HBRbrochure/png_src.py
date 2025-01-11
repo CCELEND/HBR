@@ -75,6 +75,7 @@ style_png_srcs = {
     "1003404":"https://i0.hdslb.com/bfs/game/player/tools/fever/d11360feabcff493d7f443cd62d5ecea875dbf7f.png@.webp",
     "1003503":"https://i0.hdslb.com/bfs/game/player/tools/fever/b1a1478ff6b21ec735e0dcc3344d30a605df92b4.png@.webp",
     "1003504":"https://i0.hdslb.com/bfs/game/player/tools/fever/91044de04227d78bf0064609b7af53e345f1199c.png@.webp",
+    "1003505":"https://i0.hdslb.com/bfs/game/player/tools/fever/8f2242f37aec088f1b6aa1495fffa47039ccf115.png@.webp",
     "1003603":"https://i0.hdslb.com/bfs/game/player/tools/fever/27b0a03083188f4b74dcc8e1ec7e2ac201bbbafc.png@.webp",
     "1003604":"https://i0.hdslb.com/bfs/game/player/tools/fever/4a0091c8e8cb64b6538ff6ba246364794265c404.png@.webp",
     "1003605":"https://i0.hdslb.com/bfs/game/player/tools/fever/a66306e17e18e18d070c759d9e451bc0c2908af2.png@.webp",
@@ -123,6 +124,7 @@ style_png_srcs = {
     # 31X
     "1008103":"https://i0.hdslb.com/bfs/game/player/tools/fever/cb297025424182b90cbc96501110f2d739171b55.png@.webp",
     "1008203":"https://i0.hdslb.com/bfs/game/player/tools/fever/8d3cfca9769b9a3629dd68602a9a1a0929f115b1.png@.webp",
+    "1008204":"https://i0.hdslb.com/bfs/game/player/tools/fever/f0098e3094b1b1b0019f19434365aeaaf5d64546.png@.webp",
     "1008303":"https://i0.hdslb.com/bfs/game/player/tools/fever/cd66a45d7fc1be538f9135dcdd6ac39fb12ac5a3.png@.webp",
     "1008403":"https://i0.hdslb.com/bfs/game/player/tools/fever/397ebcd8215859854a7c54cdff12175f198f03b9.png@.webp",
     "1008503":"https://i0.hdslb.com/bfs/game/player/tools/fever/46948a7b4b12828130f446e503886b7dfb5ffb77.png@.webp",
