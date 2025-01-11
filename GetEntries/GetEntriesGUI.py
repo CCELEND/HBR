@@ -184,7 +184,7 @@ def get_index_wash_entries(index_wash_entries):
 def get_index_equipments(index_equipments):
 
     if not os.path.exists("config.ini"):
-        messagebox.showerror("错误", "配置文件 config.ini 不存在！")
+        messagebox.showerror("错误", "配置文件 config.ini 不存在")
         return
 
     config = configparser.ConfigParser()
