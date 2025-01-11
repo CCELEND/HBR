@@ -66,6 +66,7 @@ style_id_brochure_id = {
     "1003404":"YBungoXmas2022_R3",
     "1003503":"AKanzakiDefault_R3",
     "1003504":"AKanzakiAgent_R3",
+    "1003505":"AKanzakiDirndl_R3",
     "1003603":"MSatsukiDefault_R3",
     "1003604":"MSatsukiAgent_R3",
     "1003605":"MSatsukiBride_R3",
@@ -117,6 +118,7 @@ style_id_brochure_id = {
 # 31X
     "1008103":"CReaperDefault_R3",
     "1008203":"LShanhuaDefault_R3",
+    "1008204":"LShanhuaNoble_R3",
     "1008303":"IRedmayneDefault_R3",
     "1008403":"VBalakrishnanDefault_R3",
     "1008503":"MdAngelisDefault_R3",
