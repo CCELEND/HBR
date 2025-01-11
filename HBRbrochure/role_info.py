@@ -152,6 +152,9 @@ style_id_all_infos = {
     "1003504":{
         "style_name":"飞雪魔法", "character_role":"破坏者", "element_type":"冰", "weapon_type":"斩",
     },
+    "1003505":{
+        "style_name":"少女的休憩", "character_role":"破坏者", "element_type":"暗", "weapon_type":"斩",
+    },
     "1003603":{
         "style_name":"甜美的枪口", "character_role":"增益者", "element_type":"冰", "weapon_type":"突",
     },
@@ -284,6 +287,9 @@ style_id_all_infos = {
     },
     "1008203":{
         "style_name":"吾若不勇，与无将同", "character_role":"增益者", "element_type":"无", "weapon_type":"斩",
+    },
+    "1008204":{
+        "style_name":"引路一袭露草色", "character_role":"增益者", "element_type":"雷", "weapon_type":"斩",
     },
     "1008303":{
         "style_name":"蓝色石榴石", "character_role":"破盾者", "element_type":"无", "weapon_type":"突",
