@@ -234,23 +234,26 @@ def save_index_equipments_to_file(index_equipments):
     yellow_fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
 
     excel_file_path = './index_equipments.xlsx'
-    # 使用 ExcelWriter 来保存并应用样式
-    with pd.ExcelWriter(excel_file_path, engine='openpyxl') as writer:
-        df.to_excel(writer, index=False, sheet_name='Sheet1')
-        worksheet = writer.sheets['Sheet1']
-        
-        # 查找 "DP +1200" 并填充整行为黄色
-        for idx, row in df.iterrows():
-            if row['DP'] == "DP +1200":
-                for col in range(1, len(df.columns) + 1):  # +1 因为 openpyxl 是 1-indexed
-                    worksheet.cell(row=idx + 2, column=col).fill = yellow_fill
+    try:
+        # 使用 ExcelWriter 来保存并应用样式
+        with pd.ExcelWriter(excel_file_path, engine='openpyxl') as writer:
+            df.to_excel(writer, index=False, sheet_name='Sheet1')
+            worksheet = writer.sheets['Sheet1']
+            
+            # 查找 "DP +1200" 并填充整行为黄色
+            for idx, row in df.iterrows():
+                if row['DP'] == "DP +1200":
+                    for col in range(1, len(df.columns) + 1):  # +1 因为 openpyxl 是 1-indexed
+                        worksheet.cell(row=idx + 2, column=col).fill = yellow_fill
 
-        # 设置每列的宽度
-        column_widths = [10, 14, 12, 12, 22, 12, 12, 20]
-        for i, width in enumerate(column_widths, start=1):
-            worksheet.column_dimensions[get_column_letter(i)].width = width
+            # 设置每列的宽度
+            column_widths = [10, 14, 12, 12, 22, 12, 12, 20]
+            for i, width in enumerate(column_widths, start=1):
+                worksheet.column_dimensions[get_column_letter(i)].width = width
 
-    messagebox.showinfo("提示", "装备词条数据已保存至: \nindex_equipments.xlsx")
+        messagebox.showinfo("提示", "装备词条数据已保存至: \nindex_equipments.xlsx")
+    except Exception as e:
+        messagebox.showerror("错误", f"{e}\n请关闭打开的 index_equipments.xlsx 并重试")
 
 def save_index_wash_entries_to_file(index_wash_entries):
     # 将字典转换为 DataFrame
@@ -263,22 +266,25 @@ def save_index_wash_entries_to_file(index_wash_entries):
     yellow_fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
 
     excel_file_path = './index_wash_entries.xlsx'
-    # 使用 ExcelWriter 来保存并应用样式
-    with pd.ExcelWriter(excel_file_path, engine='openpyxl') as writer:
-        df.to_excel(writer, index=False, sheet_name='Sheet1')
-        worksheet = writer.sheets['Sheet1']
+    try:
+        # 使用 ExcelWriter 来保存并应用样式
+        with pd.ExcelWriter(excel_file_path, engine='openpyxl') as writer:
+            df.to_excel(writer, index=False, sheet_name='Sheet1')
+            worksheet = writer.sheets['Sheet1']
 
-        for idx, row in df.iterrows():
-            if '+3' in str(row['词条']) and ('+30' not in str(row['词条'])):
-                for col in range(1, len(df.columns) + 1):  # +1 因为 openpyxl 是 1-indexed
-                    worksheet.cell(row=idx + 2, column=col).fill = yellow_fill  # +2因为标题行
+            for idx, row in df.iterrows():
+                if '+3' in str(row['词条']) and ('+30' not in str(row['词条'])):
+                    for col in range(1, len(df.columns) + 1):  # +1 因为 openpyxl 是 1-indexed
+                        worksheet.cell(row=idx + 2, column=col).fill = yellow_fill  # +2因为标题行
 
-        # 设置每列的宽度
-        column_widths = [10, 14]
-        for i, width in enumerate(column_widths, start=1):
-            worksheet.column_dimensions[get_column_letter(i)].width = width
+            # 设置每列的宽度
+            column_widths = [10, 14]
+            for i, width in enumerate(column_widths, start=1):
+                worksheet.column_dimensions[get_column_letter(i)].width = width
 
-    messagebox.showinfo("提示", "洗孔词条数据已保存至: \nindex_wash_entries.xlsx")
+        messagebox.showinfo("提示", "洗孔词条数据已保存至: \nindex_wash_entries.xlsx")
+    except Exception as e:
+        messagebox.showerror("错误", f"{e}\n请关闭打开的 index_wash_entries.xlsx 并重试")
 
 root = tk.Tk()
 root.title("词条获取")
