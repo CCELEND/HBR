@@ -287,6 +287,7 @@ def save_index_wash_entries_to_file(index_wash_entries):
         messagebox.showerror("错误", f"{e}\n请关闭打开的 index_wash_entries.xlsx 并重试")
 
 root = tk.Tk()
+root.geometry("700x405")
 root.title("词条获取")
 
 # 配置主窗口的列和行的伸展
