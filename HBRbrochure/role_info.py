@@ -93,8 +93,14 @@ style_id_all_infos = {
     "1002104":{
         "style_name":"传递Miracle", "character_role":"防御者", "element_type":"雷", "weapon_type":"打",
     },
+    "1002105":{
+        "style_name":"闪耀·究极偶像", "character_role":"防御者", "element_type":"火", "weapon_type":"打",
+    },
     "1002203":{
         "style_name":"嬉笑间坠入爱河", "character_role":"攻击者", "element_type":"雷", "weapon_type":"突",
+    },
+    "1002204":{
+        "style_name":"你的眼眸属于我", "character_role":"攻击者", "element_type":"火", "weapon_type":"突",
     },
     "1002303":{
         "style_name":"残光", "character_role":"攻击者", "element_type":"雷", "weapon_type":"斩",
@@ -300,8 +306,14 @@ style_id_all_infos = {
     "1008503":{
         "style_name":"血红浮雕", "character_role":"治疗者", "element_type":"冰", "weapon_type":"打",
     },
+    "1008504":{
+        "style_name":"刹那的邂逅", "character_role":"治疗者", "element_type":"雷", "weapon_type":"打",
+    },
     "1008603":{
         "style_name":"逆境绽放之花", "character_role":"减益者", "element_type":"暗", "weapon_type":"突",
+    },
+    "1008604":{
+        "style_name":"永恒的思念", "character_role":"减益者", "element_type":"雷", "weapon_type":"突",
     },
 
 # Angel Beats!
