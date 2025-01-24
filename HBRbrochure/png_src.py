@@ -56,7 +56,9 @@ style_png_srcs = {
     # 31B
     "1002103":"https://i0.hdslb.com/bfs/game/player/tools/fever/6e18b4a7cb6045eeded1c4b5ada99410a2c948d7.png@.webp",
     "1002104":"https://i0.hdslb.com/bfs/game/player/tools/fever/a9e372b26dfba9731826a0990d94b8d28052edb1.png@.webp",
+    "1002105":"https://i0.hdslb.com/bfs/game/player/tools/fever/f91f2ae67b94fc4b2b3514e52692e60a4dc2146f.png@.webp",
     "1002203":"https://i0.hdslb.com/bfs/game/player/tools/fever/acd03b41043959243c52113be73ee4848f66db30.png@.webp",
+    "1002204":"https://i0.hdslb.com/bfs/game/player/tools/fever/1b2b399ba60e675a81250c67bad16f7ee6e81654.png@.webp",
     "1002304":"https://i0.hdslb.com/bfs/game/player/tools/fever/0c39136c38ff5536ba476824aa676b3dae73f5d9.png@.webp",
     "1002403":"https://i0.hdslb.com/bfs/game/player/tools/fever/1108093c280b55afe3438f0ee9247f50a406bfa1.png@.webp",
     "1002404":"https://i0.hdslb.com/bfs/game/player/tools/fever/0315335e9ad47d83c201cfa228b7e87ff746a70a.png@.webp",
@@ -128,7 +130,9 @@ style_png_srcs = {
     "1008303":"https://i0.hdslb.com/bfs/game/player/tools/fever/cd66a45d7fc1be538f9135dcdd6ac39fb12ac5a3.png@.webp",
     "1008403":"https://i0.hdslb.com/bfs/game/player/tools/fever/397ebcd8215859854a7c54cdff12175f198f03b9.png@.webp",
     "1008503":"https://i0.hdslb.com/bfs/game/player/tools/fever/46948a7b4b12828130f446e503886b7dfb5ffb77.png@.webp",
+    "1008504":"https://i0.hdslb.com/bfs/game/player/tools/fever/1604debbb450e3c262b313a659d18a21eb84fb10.png@.webp",
     "1008603":"https://i0.hdslb.com/bfs/game/player/tools/fever/be31fb0ab076fbfdc86f1c2315fbd7180940f96f.png@.webp",
+    "1008604":"https://i0.hdslb.com/bfs/game/player/tools/fever/6200666e22b59a3ab17d0666a02988fc83408ebb.png@.webp",
 
     # Angel Beats!
     "1020103":"https://i0.hdslb.com/bfs/game/player/tools/fever/c3fc6a28b54d65d60d713bc73ffe0959279a71c0.png@.webp",
