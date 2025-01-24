@@ -45,7 +45,9 @@ style_id_brochure_id = {
 # 31B
     "1002103":"EAoiDefault_R3",
     "1002104":"EAoiWaitress_R3",
+    "1002105":"EAoiNewYear2024_R3",
     "1002203":"IMinaseDefault_R3",
+    "1002204":"IMinaseNewYear2024_R3",
     "1002303":"SMinaseDefault_R3",
     "1002304":"SMinaseSwim2022_R3",
     "1002403":"SHiguchiDefault_R3",
@@ -122,7 +124,9 @@ style_id_brochure_id = {
     "1008303":"IRedmayneDefault_R3",
     "1008403":"VBalakrishnanDefault_R3",
     "1008503":"MdAngelisDefault_R3",
+    "1008504":"MdAngelisKnights_R3",
     "1008603":"CSkopovskayaDefault_R3",
+    "1008604":"CSkopovskayaVampire_R3",
 
 # Angel Beats!
     "1020103":"AliceADefault_R3",
