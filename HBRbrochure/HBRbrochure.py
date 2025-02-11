@@ -23,7 +23,6 @@ def list_newline(you_list, how_projects_newline):
     for i in range(0, len(you_list), how_projects_newline):
         print(", ".join(map(str, you_list[i:i+how_projects_newline])))
 
-
 def dir_newline(you_dir, how_projects_newline):
     # 初始化计数器
     count = 0
@@ -38,13 +37,11 @@ def dir_newline(you_dir, how_projects_newline):
     if count % how_projects_newline != 0:
         print()
 
-
 def FindKeyByValue(dict, value_to_find):
     for key, value in dict.items():
         if value == value_to_find:
             return key
     return None  # 如果没有找到对应的键，则返回None
-
 
 # 获取风格 id
 def get_style_id(style_item_card_element):
@@ -178,6 +175,7 @@ try:
     # 打开 game.bilibili.com
     driver.get('https://game.bilibili.com/tool/hbr/#/file/more')
 
+
     # 等待 class 为 card-box 的元素加载完成
     card_box_element = WebDriverWait(driver, 30).until(
         EC.visibility_of_element_located((By.CLASS_NAME, "card-box"))
@@ -197,6 +195,7 @@ try:
     my_style_levels = {}
     limit_break_levels = {}
     my_style_infos = {}
+
     # 获取风格数据
     for style_item_card_element in style_item_card_elements:
 
@@ -231,11 +230,15 @@ try:
         limit_break_level = get_limit_break_level(style_item_card_element)
         limit_break_levels[my_style_id] = limit_break_level
 
-        my_style_infos[my_style_id] = style_id_all_infos[my_style_id]
-        # my_style_infos[my_style_id]["style_png_src"] = my_style_png_src
-        my_style_infos[my_style_id]["current_level"] = current_level
-        my_style_infos[my_style_id]["maximum_level"] = maximum_level
-        my_style_infos[my_style_id]["limit_break_level"] = limit_break_level
+        try:
+            my_style_infos[my_style_id] = style_id_all_infos[my_style_id]
+            # my_style_infos[my_style_id]["style_png_src"] = my_style_png_src
+            my_style_infos[my_style_id]["current_level"] = current_level
+            my_style_infos[my_style_id]["maximum_level"] = maximum_level
+            my_style_infos[my_style_id]["limit_break_level"] = limit_break_level
+        except KeyError:
+            print("[-] Missing information on style ID, please modify the role_info.py file, style ID: " + my_style_id)
+            continue
 
         my_style_num += 1
 
