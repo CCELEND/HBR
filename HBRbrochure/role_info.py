@@ -184,6 +184,9 @@ style_id_all_infos = {
     "1004203":{
         "style_name":"黑夜散去，一闪心静", "character_role":"攻击者", "element_type":"暗", "weapon_type":"打",
     },
+    "1004204":{
+        "style_name":"不为人知的闲暇", "character_role":"攻击者", "element_type":"光", "weapon_type":"打",
+    },
     "1004303":{
         "style_name":"星林的留客雨", "character_role":"减益者", "element_type":"光", "weapon_type":"突",
     },
@@ -201,6 +204,9 @@ style_id_all_infos = {
     },
     "1004504":{
         "style_name":"萌萌天才剑士", "character_role":"攻击者", "element_type":"暗", "weapon_type":"突",
+    },
+    "1004505":{
+        "style_name":"希求与渴望", "character_role":"破盾者", "element_type":"雷", "weapon_type":"突",
     },
     "1004603":{
         "style_name":"此时期盼丰登之神", "character_role":"破坏者", "element_type":"光", "weapon_type":"斩",
