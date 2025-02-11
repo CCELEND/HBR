@@ -42,7 +42,11 @@ def web_abbreviation(driver, zoom_percentage):
 def click_brochure(driver, my_style_infos):
     try:
         for style_id in my_style_infos:
-            brochure_id = GetBrochureIdByStyleId(style_id)
+            try:
+                brochure_id = GetBrochureIdByStyleId(style_id)
+            except KeyError:
+                print("[-] Missing mapping, please modify the mapping.py file, style ID: " + style_id)
+                continue
             limit_break_level = int(my_style_infos[style_id]["limit_break_level"])
 
             # 查找 id 名为 brochure_id 的元素，如果没有找到说明国服图鉴还没有更新
@@ -104,6 +108,3 @@ def get_brochure(driver, style_infos):
     input()
     # 关闭浏览器
     driver.quit()
-
-
-
