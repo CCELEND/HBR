@@ -6,6 +6,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from webdriver_manager.chrome import ChromeDriverManager
+
 import time
 import role_info
 import png_src
@@ -171,11 +173,15 @@ try:
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
-    # driver = webdriver.Chrome("./chromedriver-win64/chromedriver")
-    driver = webdriver.Chrome()
+    chromedriver_path = "./chromedriver-win64/chromedriver"
+
+    # 设置 ChromeDriver 的服务
+    service = Service(executable_path=ChromeDriverManager().install())
+    # 初始化 Chrome WebDriver
+    driver = webdriver.Chrome(service=service)
+
     # 打开 game.bilibili.com
     driver.get('https://game.bilibili.com/tool/hbr/#/file/more')
-
 
     # 等待 class 为 card-box 的元素加载完成
     card_box_element = WebDriverWait(driver, 30).until(
