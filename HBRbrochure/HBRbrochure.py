@@ -171,7 +171,8 @@ try:
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
-    driver = webdriver.Chrome("./chromedriver-win64/chromedriver")
+    # driver = webdriver.Chrome("./chromedriver-win64/chromedriver")
+    driver = webdriver.Chrome()
     # 打开 game.bilibili.com
     driver.get('https://game.bilibili.com/tool/hbr/#/file/more')
 
