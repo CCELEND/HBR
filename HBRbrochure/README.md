@@ -2,13 +2,12 @@
 炽焰天穹国服风格 Heaven Burns Red Style Chart 图鉴
 
 # Install
-1. python3.9 及以上
-2. selenium3.1.1  
-`pip3 install selenium=3.1.1`
+1. 最新的 python3
+2. 安装 selenium  
+`pip install selenium`
 3. 安装最新版本的 chrome 浏览器
-4. chromedriver 驱动  
-当前目录下有一个下载好的 chromedriver，版本是：132.0.6834.159。  
-如果不能运行就去下载最新的 Stable 稳定的版本：https://googlechromelabs.github.io/chrome-for-testing/
+4. 安装 webdriver-manager  
+`pip install webdriver-manager`
 
 # Use
 双击运行 HBRbrochure.py 即可，要想获取目前国服全部的 SS 风格 ID，请双击运行 get_all_style.py
