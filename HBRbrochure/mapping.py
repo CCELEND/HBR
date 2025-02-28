@@ -31,6 +31,7 @@ style_id_brochure_id = {
     "1001303":"MAikawaDefault_R3",
     "1001305":"MAikawaPrecious_R3",
     "1001306":"MAikawaMaiden_R3",
+    "1001307":"MAikawaSuite_R3",
     "1001403":"TTojoDefault_R3",
     "1001404":"TTojoSwim2022_R3",
     "1001405":"TTojoSuite_R3",
@@ -41,6 +42,7 @@ style_id_brochure_id = {
     "1001705":"TKunimiMagical_R3",
     "1001706":"TKunimiNewYear2023_R3",
     "1001707":"TKunimiSwim2023_R3",
+    "1001708":"TKunimiSuite_R3",
 
 # 31B
     "1002103":"EAoiDefault_R3",
@@ -78,7 +80,7 @@ style_id_brochure_id = {
     "1004104":"YShirakawaBloom_R3",
     "1004106":"YShirakawaSwim2023_R3",
     "1004203":"MTsukishiroDefault_R3",
-    # "1004204":"MTsukishiroRugged_R3",
+    "1004204":"MTsukishiroRugged_R3",
     "1004303":"MKiryuDefault_R3",
     "1004304":"MKiryuGothic_R3",
     "1004403":"CSugaharaDefault_R3",
@@ -91,11 +93,13 @@ style_id_brochure_id = {
 
 # 31D
     "1005103":"MNikaidoDefault_R3",
+    "1005104":"MNikaidoXmas2023_R3",
     "1005203":"IIshiiDefault_R3",
     "1005303":"FMikotoDefault_R3",
     "1005403":"RMurohushiDefault_R3",
     "1005405":"RMurohushiRace_R3",
     "1005503":"ADateDefault_R3",
+    "1005504":"ADateXmas2023_R3",
     "1005603":"AMizuharaDefault_R3",
 
 # 31E
