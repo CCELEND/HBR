@@ -55,6 +55,9 @@ style_id_all_infos = {
     "1001306":{
         "style_name":"心跃欣舞Fuel", "character_role":"减益者", "element_type":"火", "weapon_type":"打",
     },
+    "1001307":{
+        "style_name":"薄暮时分·飞升", "character_role":"减益者", "element_type":"暗", "weapon_type":"打",
+    },
     "1001403":{
         "style_name":"谨记死亡的美少女", "character_role":"增益者", "element_type":"火", "weapon_type":"突",
     },
@@ -84,6 +87,9 @@ style_id_all_infos = {
     },
     "1001707":{
         "style_name":"梦幻珊瑚", "character_role":"治疗者", "element_type":"光", "weapon_type":"斩",
+    },
+    "1001708":{
+        "style_name":"薄暮时分·追忆", "character_role":"增益者", "element_type":"无", "weapon_type":"斩",
     },
 
 # 31B
@@ -219,6 +225,9 @@ style_id_all_infos = {
     "1005103":{
         "style_name":"无上的终局", "character_role":"攻击者", "element_type":"暗", "weapon_type":"打",
     },
+    "1005104":{
+        "style_name":"Holiday Ring a Bell", "character_role":"攻击者", "element_type":"冰", "weapon_type":"打",
+    },
     "1005203":{
         "style_name":"击碎无彩色", "character_role":"增益者", "element_type":"暗", "weapon_type":"突",
     },
@@ -233,6 +242,9 @@ style_id_all_infos = {
     },
     "1005503":{
         "style_name":"网球场的恶魔", "character_role":"破盾者", "element_type":"暗", "weapon_type":"打",
+    },
+    "1005504":{
+        "style_name":"Holiday Star Night", "character_role":"破盾者", "element_type":"冰", "weapon_type":"打",
     },
     "1005603":{
         "style_name":"禁锢的虎鲸", "character_role":"减益者", "element_type":"无", "weapon_type":"打",
