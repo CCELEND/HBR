@@ -109,9 +109,11 @@ style_id_brochure_id = {
     "1006205":"NiOhshimaYukata2023_R3",
     "1006303":"MiOhshimaDefault_R3",
     "1006403":"YoOhshimaDefault_R3",
+    "1006404":"YoOhshimaSheep_R3",
     "1006503":"IrOhshimaDefault_R3",
     "1006504":"IrOhshimaYukata2023_R3",
     "1006603":"MuOhshimaDefault_R3",
+    "1006605":"MuOhshimaFurisode2024_R3",
 
 # 31F
     "1007103":"MYanagiDefault_R3",
