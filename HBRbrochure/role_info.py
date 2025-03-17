@@ -269,6 +269,9 @@ style_id_all_infos = {
     "1006403":{
         "style_name":"慵懒破灭", "character_role":"增益者", "element_type":"火", "weapon_type":"突",
     },
+    "1006404":{
+        "style_name":"懒洋洋的睡衣之夜", "character_role":"增益者", "element_type":"光", "weapon_type":"突",
+    },
     "1006503":{
         "style_name":"制胜之锁", "character_role":"减益者", "element_type":"火", "weapon_type":"斩",
     },
@@ -278,6 +281,10 @@ style_id_all_infos = {
     "1006603":{
         "style_name":"危机棒极了", "character_role":"治疗者", "element_type":"无", "weapon_type":"突",
     },
+    "1006605":{
+        "style_name":"初春之风扑面来", "character_role":"治疗者", "element_type":"无", "weapon_type":"突",
+    },
+    
 
 # 31F
     "1007103":{
