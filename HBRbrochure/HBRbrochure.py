@@ -174,7 +174,9 @@ try:
     chrome_options.add_argument("--headless")
 
     # 设置 ChromeDriver 的服务
-    service = Service(executable_path=ChromeDriverManager().install())
+    chromedriver_path = "./chromedriver-win64/chromedriver.exe"
+    # service = Service(executable_path=ChromeDriverManager().install())
+    service = Service(executable_path=chromedriver_path)
     # 初始化 Chrome WebDriver
     driver = webdriver.Chrome(service=service)
 
