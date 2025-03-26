@@ -145,7 +145,10 @@ style_png_srcs = {
 
     # Angel Beats!
     "1020103":"https://i0.hdslb.com/bfs/game/player/tools/fever/c3fc6a28b54d65d60d713bc73ffe0959279a71c0.png@.webp",
-    "1020203":"https://i0.hdslb.com/bfs/game/player/tools/fever/c263670de86ca0f4a617c52bc961e8acea46f398.png@.webp"
+    "1020204":"https://i0.hdslb.com/bfs/game/player/tools/fever/647e1775f5ab4455d2e2f67e428cbc0c11857744.png@.webp",
+    "1020203":"https://i0.hdslb.com/bfs/game/player/tools/fever/c263670de86ca0f4a617c52bc961e8acea46f398.png@.webp",
+    "1020204":"https://i0.hdslb.com/bfs/game/player/tools/fever/238bb88d84241bdc7e3f09ac91d0faa4a5896b0c.png@.webp",
+    "1020303":"https://i0.hdslb.com/bfs/game/player/tools/fever/5a6fb0000a51a527a8b641e21a89be0ea4851ac7.png@.webp"
     
 }
 
