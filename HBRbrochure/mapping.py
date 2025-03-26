@@ -138,7 +138,10 @@ style_id_brochure_id = {
 
 # Angel Beats!
     "1020103":"AliceADefault_R3",
-    "1020203":"AliceBDefault_R3"
+    "1020104":"AliceAOnePiece_R3",
+    "1020203":"AliceBDefault_R3",
+    "1020204":"AliceBBlazerUniform_R3",
+    "1020303":"AliceCDefault_R3"
 }
 
 
