@@ -355,7 +355,7 @@ style_id_all_infos = {
         "style_name":"平凡的非日常", "character_role":"破盾者", "element_type":"冰", "weapon_type":"突",
     },
     "1020303":{
-        "style_name":"Faraway Eden", "character_role":"破坏者", "element_type":"冰", "weapon_type":"打",
+        "style_name":"Faraway Eden", "character_role":"防御者", "element_type":"冰", "weapon_type":"打",
     }
 
 }
