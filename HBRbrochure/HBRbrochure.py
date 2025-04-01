@@ -298,7 +298,7 @@ try:
     # # 打印HTML
     # # print(html)
 
-    input()
+    # input()
     # # 关闭浏览器
     # driver.quit()
 
