@@ -45,7 +45,17 @@ try:
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
-    driver = webdriver.Chrome("./chromedriver-win64/chromedriver")
+    # driver = webdriver.Chrome("./chromedriver-win64/chromedriver")
+    # # 打开 game.bilibili.com
+    # driver.get('https://game.bilibili.com/tool/hbr/#/')
+
+    # 设置 ChromeDriver 的服务
+    chromedriver_path = "./chromedriver-win64/chromedriver.exe"
+    # service = Service(executable_path=ChromeDriverManager().install())
+    service = Service(executable_path=chromedriver_path)
+    # 初始化 Chrome WebDriver
+    driver = webdriver.Chrome(service=service)
+
     # 打开 game.bilibili.com
     driver.get('https://game.bilibili.com/tool/hbr/#/')
 
@@ -103,7 +113,7 @@ try:
     # # 打印HTML
     # # print(html)
 
-    # input()
+    input()
     # # 关闭浏览器
     # driver.quit()
 
