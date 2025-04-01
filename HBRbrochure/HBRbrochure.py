@@ -8,6 +8,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from webdriver_manager.chrome import ChromeDriverManager
 
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
+
 import time
 import role_info
 import png_src
@@ -118,7 +122,10 @@ def get_weapon_type(style_item_card_element):
     return style_weapon_type
 
 # 获取风格等级信息
-def get_role_level(style_item_card_element):
+# def get_role_level(style_item_card_element):
+def get_role_level(style_item_card_elements, i):
+
+    style_item_card_element = style_item_card_elements[i]
 
     current_level = ""
     maximum_level = ""
@@ -131,6 +138,9 @@ def get_role_level(style_item_card_element):
             By.XPATH, ".//span[@data-content]"
         )
 
+        if not role_level_element.is_displayed():
+            style_item_card_elements[i-1].location_once_scrolled_into_view
+
         # 提取元素值
         current_level = span_elements[1].text
         maximum_level = span_elements[2].text
@@ -141,19 +151,27 @@ def get_role_level(style_item_card_element):
     return [current_level, maximum_level]
 
 # 获取风格上限突破
-def get_limit_break_level(style_item_card_element):
+# def get_limit_break_level(style_item_card_element):
+def get_limit_break_level(style_item_card_elements, i):
+
+    style_item_card_element = style_item_card_elements[i]
 
     limit_break_level = '0'
     try:
         limit_break_level_element = style_item_card_element.find_element(
             By.XPATH, ".//div[contains(@class, 'limit-break-level')]"
         )
+
+        if not limit_break_level_element.is_displayed():
+            style_item_card_elements[i-1].location_once_scrolled_into_view
+
         limit_break_level = limit_break_level_element.text
 
     except Exception as e:
         pass
 
     return limit_break_level
+
 
 def switch_to_brochure(driver, style_infos):
     # 使用 JavaScript 打开新标签页
@@ -188,10 +206,12 @@ try:
         EC.visibility_of_element_located((By.CLASS_NAME, "card-box"))
     )
 
+
     # 查找类名为 style-item card 的 <div> 元素
     style_item_card_elements = card_box_element.find_elements(
         By.XPATH, ".//div[contains(@class, 'style-item') and contains(@class, 'card')]"
     )
+
 
     my_style_num = 0
     my_style_ids = []
@@ -203,12 +223,14 @@ try:
     limit_break_levels = {}
     my_style_infos = {}
 
+
     # 获取风格数据
-    for style_item_card_element in style_item_card_elements:
+    for i, style_item_card_element in enumerate(style_item_card_elements):
+    # for style_item_card_element in style_item_card_elements:
 
         # 风格元素是动态加载的，需要判断元素是否可见，不可见就滚动到该元素
-        if not style_item_card_element.is_displayed():
-            style_item_card_element.location_once_scrolled_into_view
+        # if not style_item_card_element.is_displayed():
+        #     style_item_card_element.location_once_scrolled_into_view
 
         # 获取风格 id
         my_style_id = get_style_id(style_item_card_element)
@@ -228,13 +250,15 @@ try:
         # my_style_weapon_types[my_style_id] = my_style_weapon_type
 
         # 获取风格等级
-        result = get_role_level(style_item_card_element)
+        # result = get_role_level(style_item_card_element)
+        result = get_role_level(style_item_card_elements, i)
         current_level = result[0]
         maximum_level = result[1].replace("/", "")  # 去掉第二个元素中的 "/"
         my_style_levels[my_style_id] = [current_level, maximum_level]
 
         # 获取风格上限突破
-        limit_break_level = get_limit_break_level(style_item_card_element)
+        # limit_break_level = get_limit_break_level(style_item_card_element)
+        limit_break_level = get_limit_break_level(style_item_card_elements, i)
         limit_break_levels[my_style_id] = limit_break_level
 
         try:
@@ -265,6 +289,7 @@ try:
     print("[+] SS 风格上限突破:")
     dir_newline(limit_break_levels, 6)
 
+
     # 打开并切换到新标签页
     switch_to_brochure(driver, my_style_infos)
 
@@ -273,11 +298,10 @@ try:
     # # 打印HTML
     # # print(html)
 
-    # input()
+    input()
     # # 关闭浏览器
     # driver.quit()
 
 except Exception as e:
     print(f"[-] {e}")
-
 
