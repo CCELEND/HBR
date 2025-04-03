@@ -27,6 +27,8 @@ DataCount=100
 `python get_index_equipments.py`
 * GUI 的版本：  
 `python GetEntriesGUI.py`
+* 本地计算真实随机值的版本：
+`python GetEntriesGUILocal.py`
 # api 测试（开发测试用）
 1. 访问：https://hbrapi.fuyumi.xyz/
 2. 在浏览器控制台运行下面命令
