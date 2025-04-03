@@ -19,15 +19,15 @@ RandomMainAbility_index=
 修改 DataCount(50倍数) 即可，这里默认是获取100条数据  
 DataCount=100
 2. 运行
-* 获取洗孔和装备的词条:  
+* 获取洗孔和装备的词条（爬虫）:  
 `python get_entries.py`
-* 只获取洗孔词条:  
+* 只获取洗孔词条（爬虫）:  
 `python get_index_wash_entries.py`
-* 只获取装备词条:  
+* 只获取装备词条（爬虫）:  
 `python get_index_equipments.py`
-* GUI 的版本：  
+* GUI 的版本（爬虫）：  
 `python GetEntriesGUI.py`
-* 本地计算真实随机值的版本：
+* 本地计算真实随机值的版本：  
 `python GetEntriesGUILocal.py`
 # api 测试（开发测试用）
 1. 访问：https://hbrapi.fuyumi.xyz/
