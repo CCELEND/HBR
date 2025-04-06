@@ -92,27 +92,6 @@ def edit_text(text_widget, data):
         text_widget.delete("1.0", tk.END)
         text_widget.insert(tk.END, data)
 
-    # 每次失败后等待2秒钟，并最多重试3次
-def get_data_from_url(url, retries=3, delay=2):
-    for i in range(retries):
-        try:
-            response = requests.get(url)
-            response.raise_for_status()  # 如果响应状态码不是200，将引发HTTPError异常
-            return response.json()
-        except requests.exceptions.HTTPError as errh:
-            messagebox.showerror("错误", f"HTTP Error: {errh}")
-        except requests.exceptions.ConnectionError as errc:
-            messagebox.showerror("错误", f"Error Connecting: {errc}")
-        except requests.exceptions.Timeout as errt:
-            messagebox.showerror("错误", f"Timeout Error: {errt}")
-        except requests.exceptions.RequestException as err:
-            messagebox.showerror("错误", f"Error: {err}")
-
-        messagebox.showinfo("提示", f"{delay} 秒后重试...")
-        time.sleep(delay)
-
-    return None  # 如果所有重试都失败，则返回 None
-
 def print_dir(dir_data):
     data = ""
     for key, value in dir_data.items():
