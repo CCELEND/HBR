@@ -271,7 +271,7 @@ def save_index_equipments_to_file(index_equipments):
                         worksheet.cell(row=idx + 2, column=col).fill = yellow_fill
 
             # 设置每列的宽度
-            column_widths = [10, 14, 12, 12, 22, 12, 12, 20, 12, 25]
+            column_widths = [10, 14, 12, 12, 22, 12, 12, 20, 12, 14]
             for i, width in enumerate(column_widths, start=1):
                 worksheet.column_dimensions[get_column_letter(i)].width = width
 
@@ -302,7 +302,7 @@ def save_index_wash_entries_to_file(index_wash_entries):
                         worksheet.cell(row=idx + 2, column=col).fill = yellow_fill  # +2因为标题行
 
             # 设置每列的宽度
-            column_widths = [10, 14, 25]
+            column_widths = [10, 14, 14]
             for i, width in enumerate(column_widths, start=1):
                 worksheet.column_dimensions[get_column_letter(i)].width = width
 
