@@ -28,6 +28,7 @@ style_id_brochure_id = {
     "1001204":"YIzumiYukata2022_R3",
     "1001205":"YIzumiAnniv2023_R3",
     "1001207":"YIzumiBeauty_R3",
+    "1001208":"YIzumiSnowWhite_R3",
     "1001303":"MAikawaDefault_R3",
     "1001305":"MAikawaPrecious_R3",
     "1001306":"MAikawaMaiden_R3",
@@ -62,6 +63,7 @@ style_id_brochure_id = {
 # 31C
     "1003103":"BIYamawakiDefault_R3",
     "1003104":"BIYamawakiXmas2022_R3",
+    "1003106":"BIYamawakiDaydream_R3",
     "1003203":"SSakurabaDefault_R3",
     "1003204":"SSakurabaNewYear2023_R3",
     "1003303":"MTenneDefault_R3",
