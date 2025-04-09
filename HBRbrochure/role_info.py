@@ -46,6 +46,9 @@ style_id_all_infos = {
     "1001207":{
         "style_name":"舞动的轮回", "character_role":"破盾者", "element_type":"光", "weapon_type":"突",
     },
+    "1001208":{
+        "style_name":"红玉待君来", "character_role":"破盾者", "element_type":"暗", "weapon_type":"突",
+    },
     "1001303":{
         "style_name":"窒息强击", "character_role":"减益者", "element_type":"无", "weapon_type":"打",
     },
@@ -139,6 +142,9 @@ style_id_all_infos = {
     },
     "1003104":{
         "style_name":"Holy Knight", "character_role":"攻击者", "element_type":"光", "weapon_type":"斩",
+    },
+    "1003106":{
+        "style_name":"Daydream Believer", "character_role":"攻击者", "element_type":"雷", "weapon_type":"斩",
     },
     "1003203":{
         "style_name":"飘荡于星海的占卜师", "character_role":"增益者", "element_type":"无", "weapon_type":"打",
