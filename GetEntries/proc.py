@@ -2,18 +2,17 @@
 # -*- coding: UTF-8 -*-
 
 
-import os
-import time
 import math
-import datetime
 import concurrent.futures
-from functools import partial
-import threading
 
 from get_ct import get_random_value, get_property
-from get_ct import first_entry, DP_entry, wisdom_entry, attack_power_entry, physical_strength_entry
-from get_ct import spirit_entry, career_entry, charm_entry, wash_entry
+from get_ct import career_entry, charm_entry, wash_entry
 from get_ct import spct
+
+def list_dict(dict):
+    keys = list(dict.keys())
+    ranges = list(dict.values())
+    return keys, ranges
 
 
 def wash_process_index(seed, cur_index):
@@ -32,6 +31,7 @@ def equipment_process_index(seed, cur_index):
 
 def parallel_process_indexes(fun, seed, start_index, end_index, 
                           chunk_size=10, max_workers=None):
+
     index_wash_entries = {}
     total_tasks = end_index - start_index
     
