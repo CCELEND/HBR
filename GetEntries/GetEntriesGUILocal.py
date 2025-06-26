@@ -1,29 +1,29 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-import tkinter as tk
 import os
-import time
 import configparser
 import pandas as pd
-import openpyxl
-from tkinter import scrolledtext, Menu, messagebox
+from tkinter import scrolledtext, messagebox
 from openpyxl.styles import PatternFill
-from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.utils import get_column_letter
 
-import math
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
+
 import datetime
 import threading
 from collections import OrderedDict
 
-
+from window import set_window_icon, show_context_menu, set_window_top, creat_window
 from proc import parallel_process_indexes
 
 index_wash_entries = {}
 index_wash_entries_lock = threading.Lock()  # 创建一个锁
 index_equipments = {}
 index_equipments_lock = threading.Lock()  # 创建一个锁
+
+output_text = None
 
 # 右键复制
 def copy_text(event, text_widget):
@@ -33,14 +33,14 @@ def copy_text(event, text_widget):
         if selected_text:
             text_widget.clipboard_clear()
             text_widget.clipboard_append(selected_text)
-    except tk.TclError:
+    except ttk.TclError:
         pass  # 如果没有选中文本，忽略错误
 
 # 右键粘贴
 def paste_text(event, text_widget):
     try:
-        text_widget.insert(tk.INSERT, text_widget.clipboard_get())
-    except tk.TclError:
+        text_widget.insert(ttk.INSERT, text_widget.clipboard_get())
+    except ttk.TclError:
         pass  # 如果剪贴板为空，忽略错误
 
 # 右键剪切
@@ -51,19 +51,8 @@ def cut_text(event, text_widget):
             text_widget.clipboard_clear()
             text_widget.clipboard_append(selected_text)
             text_widget.delete("sel.first", "sel.last")
-    except tk.TclError:
+    except ttk.TclError:
         pass
-
-# 右键菜单
-def show_context_menu(event, text_widget):
-    # 创建上下文菜单
-    context_menu = Menu(text_widget, tearoff=0)
-    context_menu.add_command(label="复制", command=lambda e=event: copy_text(e, text_widget))
-    context_menu.add_command(label="粘贴", command=lambda e=event: paste_text(e, text_widget))
-    context_menu.add_command(label="剪切", command=lambda e=event: cut_text(e, text_widget))
-    # 在鼠标右键点击的位置显示菜单
-    context_menu.tk_popup(event.x_root, event.y_root)
-    context_menu.grab_release()
 
 def clear_entries():
     index_wash_entries.clear()
@@ -72,25 +61,26 @@ def clear_entries():
 # 清空输入输出框及字典
 def clear_text(*text_widgets):
     for text_widget in text_widgets:
-        if text_widget.cget('state') == tk.DISABLED:
-            text_widget.config(state=tk.NORMAL)
-            text_widget.delete("1.0", tk.END)
-            text_widget.config(state=tk.DISABLED)
+        if text_widget.cget('state') == ttk.DISABLED:
+            text_widget.config(state=ttk.NORMAL)
+            text_widget.delete("1.0", ttk.END)
+            text_widget.config(state=ttk.DISABLED)
         else:
-            text_widget.delete("1.0", tk.END)
+            text_widget.delete("1.0", ttk.END)
 
     clear_entries()
 
 # 编辑文本框
 def edit_text(text_widget, data):
-    if text_widget.cget('state') == tk.DISABLED:
-        text_widget.config(state=tk.NORMAL)
-        text_widget.delete("1.0", tk.END)
-        text_widget.insert(tk.END, data)
-        text_widget.config(state=tk.DISABLED)
+    if text_widget.cget('state') == ttk.DISABLED:
+        text_widget.config(state=ttk.NORMAL)
+        text_widget.delete("1.0", ttk.END)
+        text_widget.insert(ttk.END, data)
+        text_widget.config(state=ttk.DISABLED)
     else:
-        text_widget.delete("1.0", tk.END)
-        text_widget.insert(tk.END, data)
+        text_widget.delete("1.0", ttk.END)
+        text_widget.insert(ttk.END, data)
+
 
 def print_dir(dir_data):
     data = ""
@@ -164,13 +154,6 @@ def get_index_wash_entries():
     start_index = int(ChangeAbility_index)
     end_index = start_index + int(DataCount)
 
-    # starttime = datetime.datetime.now()
-    # for cur_index in range(start_index, end_index):
-    #     real = get_random_value(seed, cur_index)
-    #     wash_entry_str = get_property(real, wash_entry)
-    #     index_wash_entries.update({ str(cur_index):[wash_entry_str, str(real)]})
-    # endtime = datetime.datetime.now()
-
     starttime = datetime.datetime.now()
     global index_wash_entries
     temp_index_wash_entries = parallel_process_indexes(
@@ -181,7 +164,10 @@ def get_index_wash_entries():
         chunk_size=10,
         max_workers=max(4, os.cpu_count())
     )
-    index_wash_entries = OrderedDict(sorted(temp_index_wash_entries.items()))
+    index_wash_entries = OrderedDict(sorted(
+        temp_index_wash_entries.items(),
+        key=lambda x: int(x[0])
+    ))
     endtime = datetime.datetime.now()
 
     print("use times {0:.2f}s".format((endtime - starttime).total_seconds()))
@@ -213,14 +199,6 @@ def get_index_equipments():
     start_index = int(RandomMainAbility_index)
     end_index = start_index + int(DataCount)
 
-    # for cur_index in range(start_index, end_index):
-    #     real = get_random_value(seed, cur_index)
-    #     spct_str = get_property(real, spct)
-    #     career_entry_str = get_property(real, career_entry)
-    #     charm_entry_str = get_property(real, charm_entry)
-    #     spct_list = spct_str.split()
-    #     index_equipments.update({ str(cur_index):spct_list+[career_entry_str+"的初始SP+3", charm_entry_str, str(real)]})
-
     starttime = datetime.datetime.now()
     global index_equipments
     temp_index_equipments = parallel_process_indexes(
@@ -231,7 +209,10 @@ def get_index_equipments():
         chunk_size=10,
         max_workers=max(4, os.cpu_count())
     )
-    index_equipments = OrderedDict(sorted(temp_index_equipments.items()))
+    index_equipments = OrderedDict(sorted(
+        temp_index_equipments.items(),
+        key=lambda x: int(x[0])
+    ))
     endtime = datetime.datetime.now()
 
     print("use times {0:.2f}s".format((endtime - starttime).total_seconds()))
@@ -257,7 +238,7 @@ def save_index_equipments_to_file(index_equipments):
     # 定义黄色填充样式
     yellow_fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
 
-    excel_file_path = './index_equipments.xlsx'
+    excel_file_path = 'index_equipments.xlsx'
     try:
         # 使用 ExcelWriter 来保存并应用样式
         with pd.ExcelWriter(excel_file_path, engine='openpyxl') as writer:
@@ -289,7 +270,7 @@ def save_index_wash_entries_to_file(index_wash_entries):
     # 定义黄色填充样式
     yellow_fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
 
-    excel_file_path = './index_wash_entries.xlsx'
+    excel_file_path = 'index_wash_entries.xlsx'
     try:
         # 使用 ExcelWriter 来保存并应用样式
         with pd.ExcelWriter(excel_file_path, engine='openpyxl') as writer:
@@ -311,9 +292,9 @@ def save_index_wash_entries_to_file(index_wash_entries):
         messagebox.showerror("错误", f"{e}\n请关闭打开的 index_wash_entries.xlsx 并重试")
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    root.geometry("700x405")
-    root.title("词条获取")
+
+    root = creat_window("词条获取", 700, 405, 200, 200)
+    set_window_icon(root, "entries.ico")
 
     # 配置主窗口的列和行的伸展
     root.grid_rowconfigure(0, weight=1)     # get_entries_frame 行随着窗口调整大小
@@ -324,8 +305,8 @@ if __name__ == "__main__":
 
 
     # 创建一个 Frame
-    get_entries_frame = tk.Frame(root)
-    get_entries_frame.grid(row=0, column=0, columnspan=4, padx=0, pady=(10,20), sticky="nsew")
+    get_entries_frame = ttk.Frame(root)
+    get_entries_frame.grid(row=0, column=0, columnspan=4, padx=0, pady=10, sticky="nsew")
     # 配置框架的行列的伸展框架的伸展
     get_entries_frame.grid_rowconfigure(0, weight=1)      
     get_entries_frame.grid_columnconfigure(0, weight=1)  # 使输出框占满整列
@@ -333,17 +314,16 @@ if __name__ == "__main__":
     get_entries_frame.grid_columnconfigure(2, weight=1)  # 使输出框占满整列
     get_entries_frame.grid_columnconfigure(3, weight=1)  # 使输出框占满整列
       
-
     # 输出框
     output_text = scrolledtext.ScrolledText(get_entries_frame, 
-        wrap=tk.WORD, width=50, height=20)
+        wrap=ttk.WORD, width=50, height=20)
     output_text.grid(row=0, column=0, columnspan=3, padx=(10,0), pady=0, sticky="nsew")
     # 绑定鼠标右键点击事件到上下文菜单
     output_text.bind("<Button-3>", lambda event, tw=output_text: show_context_menu(event, tw))
 
     # 按钮框架
-    buttons_frame = tk.Frame(get_entries_frame)
-    buttons_frame.grid(row=0, column=3, padx=(0,10), pady=0, sticky="nsew")
+    buttons_frame = ttk.Frame(get_entries_frame)
+    buttons_frame.grid(row=0, column=3, padx=10, pady=0, sticky="nsew")
     buttons_frame.grid_rowconfigure(0, weight=1)
     buttons_frame.grid_rowconfigure(1, weight=1)
     buttons_frame.grid_rowconfigure(2, weight=1)
@@ -351,25 +331,26 @@ if __name__ == "__main__":
     buttons_frame.grid_columnconfigure(0, weight=1)  # 占满整列
 
 
-
     # 洗孔词条按钮
-    get_index_equipments_button = tk.Button(buttons_frame, 
+    get_index_equipments_button = ttk.Button(buttons_frame, bootstyle="primary-outline",
         width=20, text="获取洗孔词条", command=lambda: get_index_wash_entries())
-    get_index_equipments_button.grid(row=0, column=0, padx=(0,10), pady=(10,0))
+    get_index_equipments_button.grid(row=0, column=0, padx=10, pady=(10,0))
     # 装备词条按钮
-    get_index_equipments_button = tk.Button(buttons_frame, 
+    get_index_equipments_button = ttk.Button(buttons_frame, bootstyle="primary-outline",
         width=20, text="获取装备词条", command=lambda: get_index_equipments())
-    get_index_equipments_button.grid(row=1, column=0, padx=(0,10), pady=(10,0))
+    get_index_equipments_button.grid(row=1, column=0, padx=10, pady=(10,0))
 
 
     # 创建清空按钮
-    clear_button = tk.Button(buttons_frame, 
+    clear_button = ttk.Button(buttons_frame, bootstyle="primary-outline",
         width=20, text="清空", command=lambda: clear_text(output_text))
-    clear_button.grid(row=2, column=0, padx=(0,10), pady=(10,0))
+    clear_button.grid(row=2, column=0, padx=10, pady=(10,0))
 
     # 创建保存 Excel 文件按钮
-    save_file_button = tk.Button(buttons_frame, 
+    save_file_button = ttk.Button(buttons_frame, bootstyle="primary-outline",
         width=20, text="保存为 Excel 文件", command=save_to_file)
-    save_file_button.grid(row=3, column=0, padx=(0,10), pady=(10,0))
+    save_file_button.grid(row=3, column=0, padx=10, pady=(10,0))
+
 
     root.mainloop()
+
