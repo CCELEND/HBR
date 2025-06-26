@@ -19,12 +19,6 @@ RandomMainAbility_index=
 修改 DataCount(50倍数) 即可，这里默认是获取300条数据  
 DataCount=300
 2. 运行
-* 获取洗孔和装备的词条（爬虫）:  
-`python get_entries.py`
-* 只获取洗孔词条（爬虫）:  
-`python get_index_wash_entries.py`
-* 只获取装备词条（爬虫）:  
-`python get_index_equipments.py`
 * GUI 的版本（爬虫）：  
 `python GetEntriesGUI.py`
 * 本地计算真实随机值的版本：  
