@@ -2,10 +2,10 @@
 自动获取词条数据并保存为 Excel 文件，顶级词条行用黄色背景填充
 # Install
 1. python3.9 及以上
-2. numpy, pandas, openpyxl, requests  
+2. numpy, pandas, openpyxl, requests, ttkbootstrap  
 `pip install --upgrade numpy`  
 `pip install --upgrade pandas openpyxl`  
-`pip install requests`
+`pip install requests ttkbootstrap`
 
 # Use
 1. 修改 config.ini 配置文件
@@ -16,8 +16,8 @@ ChangeAbility_index=
 RandomMainAbility_seed=  
 RandomMainAbility_index=
 * 控制获取数据数:  
-修改 DataCount(50倍数) 即可，这里默认是获取100条数据  
-DataCount=100
+修改 DataCount(50倍数) 即可，这里默认是获取300条数据  
+DataCount=300
 2. 运行
 * 获取洗孔和装备的词条（爬虫）:  
 `python get_entries.py`
